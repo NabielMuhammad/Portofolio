@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabiel Muhammad - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Global Pill Nav -->
+    <div class="pill-nav-container">
+        <nav class="pill-nav">
+            <a href="#hero" class="pill-link logo-link">
+                <span class="hover-circle"></span>
+                <span class="label-stack">
+                    <span class="pill-label">Home</span>
+                    <span class="pill-label-hover">Home</span>
+                </span>
+            </a>
+            <a href="#about" class="pill-link">
+                <span class="hover-circle"></span>
+                <span class="label-stack">
+                    <span class="pill-label">About</span>
+                    <span class="pill-label-hover">About</span>
+                </span>
+            </a>
+            <a href="#experience" class="pill-link">
+                <span class="hover-circle"></span>
+                <span class="label-stack">
+                    <span class="pill-label">Experience</span>
+                    <span class="pill-label-hover">Experience</span>
+                </span>
+            </a>
+            <a href="#projects" class="pill-link">
+                <span class="hover-circle"></span>
+                <span class="label-stack">
+                    <span class="pill-label">Projects</span>
+                    <span class="pill-label-hover">Projects</span>
+                </span>
+            </a>
+            <a href="#skills" class="pill-link">
+                <span class="hover-circle"></span>
+                <span class="label-stack">
+                    <span class="pill-label">Skills</span>
+                    <span class="pill-label-hover">Skills</span>
+                </span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Hero Section (Dark Neon Hybrid) -->
+    <header id="hero" class="hero dark-hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Tersedia untuk Peluang Baru
+                </div>
+                
+                <span class="hero-greeting">Halo, saya</span>
+                <h1 class="hero-name">Nabiel Muhammad Imjauzanansyah</h1>
+                
+                <div class="hero-role">
+                    <span class="role-prefix">Saya seorang</span>
+                    <span class="typed-text"></span><span class="cursor">|</span>
+                </div>
+                
+                <p class="hero-description">
+                    Lulusan Sistem Informasi yang berfokus pada <strong>Applied Machine Learning</strong> dan <strong>Software Engineering</strong>. Saya merancang arsitektur data end-to-end hingga sistem backend yang siap produksi.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary dark-btn-primary">
+                        <i class="fa-solid fa-rocket"></i> Lihat Proyek
+                    </a>
+                    <a href="CV/Nabiel_Muhammad_CV_AIML.pdf" target="_blank" class="btn btn-secondary dark-btn-secondary">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title">nabiel.py</span>
+                    </div>
+                    <div class="code-content">
+<span class="code-keyword">class</span> <span class="code-class">Engineer</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):
+        self.name = <span class="code-string">"Nabiel Muhammad"</span>
+        self.focus = [<span class="code-string">"AI/ML"</span>, <span class="code-string">"Backend"</span>]
+        
+    <span class="code-keyword">def</span> <span class="code-func">build_future</span>(self):
+        <span class="code-keyword">return</span> <span class="code-string">"Deploying scalable AI solutions"</span>
+        
+nabiel = Engineer()
+nabiel.build_future()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section (Dark Neon Hybrid) -->
+    <section id="about" class="section dark-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">01. Tentang Saya</span>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Kenali <span class="gradient-text">Perjalanan</span> Saya</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image-wrapper reveal delay-100">
+                    <div class="about-image">
+                        <img src="Foto/NzM.JPG" alt="Nabiel Muhammad" class="about-photo-img" onerror="this.src='Foto/NzM.JPG'">
+                    </div>
+                </div>
+                
+                <div class="about-content reveal delay-200">
+                    <h3 class="about-heading">Lulusan Sistem Informasi yang Antusias Memecahkan Masalah</h3>
+                    <p class="about-text">
+                        Saya baru menyelesaikan studi Sistem Informasi dengan GPA <strong>3.66/4.00</strong> di Universitas Muhammadiyah Sumatera Utara. Fokus utama saya adalah menjembatani riset AI dengan implementasi perangkat lunak dunia nyata.
+                    </p>
+                    <p class="about-text">
+                        Tugas akhir saya melibatkan pengembangan penerjemah bahasa isyarat BISINDO secara real-time menggunakan arsitektur hybrid CNN-LSTM, yang berhasil dipublikasikan di Jurnal ICT.
+                    </p>
+                    
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-graduation-cap detail-icon" style="color: #3b82f6;"></i>
+                            <div>
+                                <span class="detail-label">Pendidikan</span>
+                                <span class="detail-value">S1 Sistem Informasi</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-code-branch detail-icon" style="color: #8b5cf6;"></i>
+                            <div>
+                                <span class="detail-label">Pengalaman</span>
+                                <span class="detail-value">Telkomsel Intern & DBS Trainee</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience (Apple Bento Style) -->
+    <section id="experience" class="section bg-canvas" style="padding-top: var(--space-xl);">
+        <div class="container">
+            <div class="bento-grid">
+                <!-- Half Cards -->
+                <div class="bento-card col-6 reveal delay-100">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Juni 2025 - Sep 2025</span>
+                        <h3 class="bento-title">Software Developer Intern<br><span style="color: var(--color-gray);">Telkomsel</span></h3>
+                        <p class="bento-desc">
+                            Membangun bot Telegram distribusi voucher yang terintegrasi dengan REST API SAMOSIR.LIVE. Menangani 1.000 transaksi/jam dengan implementasi enkripsi E2E dan 2FA. Beroperasi 10+ bulan di lingkungan produksi.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bento-card col-6 reveal delay-200">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Feb 2025 - Agt 2025</span>
+                        <h3 class="bento-title">ML Engineer Trainee<br><span style="color: var(--color-gray);">DBS Foundation</span></h3>
+                        <p class="bento-desc">
+                            Lulusan program intensif Machine Learning Engineering. Membangun purwarupa data-driven, mulai dari sistem rekomendasi hingga klasifikasi teks NLP menggunakan Scikit-learn, TensorFlow, dan Keras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects (Bento Grid) -->
+    <section id="projects" class="section bg-paper">
+        <div class="container">
+            <h2 class="section-title reveal">Proyek Utama.</h2>
+            
+            <div class="bento-grid">
+                
+                <!-- Hero Project: NzSignify -->
+                <div class="bento-card col-12 horizontal reveal">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Final Year Project</span>
+                        <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 40px);">NzSignify (BISINDO)</h3>
+                        <p class="bento-desc" style="max-width: 400px; margin-bottom: var(--space-lg);">
+                            Sistem penerjemah bahasa isyarat BISINDO secara real-time. Memanfaatkan arsitektur hybrid CNN-LSTM dengan dataset 11.000 frame gambar, mencapai akurasi validasi 96%.
+                        </p>
+                        <div class="tag-container">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">CNN-LSTM</span>
+                            <span class="tag">React.js</span>
+                        </div>
+                    </div>
+                    <div class="bento-image-wrapper">
+                        <img src="Foto/nzsignify.jpg" alt="NzSignify Mockup">
+                    </div>
+                </div>
+
+                <!-- Secondary Project: InvestMentor -->
+                <div class="bento-card col-6 horizontal reveal delay-100" style="flex-direction: column-reverse;">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Full-Stack AI</span>
+                        <h3 class="bento-title">InvestMentor</h3>
+                        <p class="bento-desc">
+                            Simulator trading & mentor AI berbasis Gemini 2.0. Memprediksi saham via TensorFlow.js dengan ingest data real-time.
+                        </p>
+                    </div>
+                    <div class="bento-image-wrapper" style="min-height: 250px;">
+                        <img src="Foto/investmentor.jpg" alt="InvestMentor Mockup">
+                    </div>
+                </div>
+
+                <!-- Secondary Project: Bot Voucher -->
+                <div class="bento-card col-6 horizontal reveal delay-200" style="flex-direction: column-reverse;">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Automation & REST API</span>
+                        <h3 class="bento-title">Bot Voucher BGA</h3>
+                        <p class="bento-desc">
+                            Bot distribusi berskala produksi untuk Telkomsel. Arsitektur backend scalable dengan enkripsi E2E dan manajemen webhook.
+                        </p>
+                    </div>
+                    <div class="bento-image-wrapper" style="min-height: 250px;">
+                        <img src="Foto/botvoucher.jpg" alt="Bot Voucher Mockup">
+                    </div>
+                </div>
+
+                <!-- Full Width Project: ParentCare -->
+                <div class="bento-card col-12 horizontal reveal delay-300">
+                    <div class="bento-image-wrapper" style="flex: 1.2;">
+                        <img src="Foto/parentcare.jpg" alt="ParentCare Mockup">
+                    </div>
+                    <div class="bento-card-content" style="flex: 1;">
+                        <span class="text-meta">DBS Foundation Capstone</span>
+                        <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 36px);">ParentCare Analytics</h3>
+                        <p class="bento-desc" style="margin-bottom: var(--space-lg);">
+                            Platform analisis gaya pengasuhan bertenaga AI. Menggunakan Random Forest Classifier untuk memprediksi metrik pengasuhan dan menghasilkan insight kustom.
+                        </p>
+                        <div class="tag-container">
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Random Forest</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Certifications -->
+    <section id="skills" class="section bg-canvas">
+        <div class="container">
+            <h2 class="section-title reveal">Keahlian & Sertifikasi.</h2>
+            
+            <div class="bento-grid">
+                <!-- Skills Columns -->
+                <div class="bento-card col-4 reveal">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Domain 01</span>
+                        <h3 class="bento-title">AI & ML</h3>
+                        <p class="bento-desc">TensorFlow, Keras, Scikit-learn, CNN-LSTM, NLP, Computer Vision, LLM Integration (Gemini), Model Deployment.</p>
+                    </div>
+                </div>
+                
+                <div class="bento-card col-4 reveal delay-100">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Domain 02</span>
+                        <h3 class="bento-title">Data & Backend</h3>
+                        <p class="bento-desc">Node.js, Express, Laravel, PostgreSQL, ETL Pipelines, Pandas, NumPy, Data Cleaning, WebSocket.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card col-4 reveal delay-200">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Domain 03</span>
+                        <h3 class="bento-title">Tools</h3>
+                        <p class="bento-desc">Git, GitHub, Docker, Google Colab, VS Code, Vercel, Railway, REST API Integration.</p>
+                    </div>
+                </div>
+
+                <!-- Certifications List (Col-12) -->
+                <div class="bento-card col-12 reveal delay-300" id="certifications">
+                    <div class="bento-card-content">
+                        <span class="text-meta">Validasi Resmi</span>
+                        <h3 class="bento-title">Sertifikasi Profesional</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg);">
+                            
+                            <a href="Sertifikat/[Coding Camp 2025] Certificate - MC384D5Y0993.pdf" target="_blank" class="btn-link" style="padding: var(--space-md); border-radius: var(--radius-sm); background: var(--color-canvas); text-decoration: none;">
+                                ML Engineering (DBS Foundation)
+                            </a>
+                            
+                            <a href="#" class="btn-link" style="padding: var(--space-md); border-radius: var(--radius-sm); background: var(--color-canvas); text-decoration: none;">
+                                Applied Machine Learning (Dicoding)
+                            </a>
+                            
+                            <a href="#" class="btn-link" style="padding: var(--space-md); border-radius: var(--radius-sm); background: var(--color-canvas); text-decoration: none;">
+                                Data Analysis with Python (Google)
+                            </a>
+                            
+                            <a href="#" class="btn-link" style="padding: var(--space-md); border-radius: var(--radius-sm); background: var(--color-canvas); text-decoration: none;">
+                                Telkomsel Official Internship
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: var(--space-xxl) 0; background: var(--color-paper); text-align: center;">
+        <p class="text-meta" style="margin-bottom: var(--space-md);">
+            <a href="https://github.com/NabielMuhammad" target="_blank" style="margin: 0 var(--space-sm); color: var(--color-gray-dark);">GitHub</a>
+            <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank" style="margin: 0 var(--space-sm); color: var(--color-gray-dark);">LinkedIn</a>
+        </p>
+        <p class="bento-desc" style="font-size: 14px;">&copy; 2026 Nabiel Muhammad. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
