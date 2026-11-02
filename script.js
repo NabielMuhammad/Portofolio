@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initTypingEffect();
     initProjectFilter();
+    initGalleryModal();
     initBackToTop();
 });
 
@@ -172,25 +173,19 @@ function initSmoothScroll() {
 }
 
 /* ============================================
-   3D TILT & DYNAMIC GLARE
+   DYNAMIC GLARE (HD CRISP — NO BLUR TILT)
    ============================================ */
 function initTiltEffect() {
     if (window.matchMedia('(pointer: coarse)').matches) return;
     const cards = document.querySelectorAll('.bento-card');
 
     cards.forEach(card => {
-        card.style.transformStyle = 'preserve-3d';
         const glare = card.querySelector('.glare');
 
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -3;
-            const rotateY = ((x - centerX) / centerX) * 3;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
             
             if (glare) {
                 const glareX = (x / rect.width) * 100;
@@ -200,7 +195,6 @@ function initTiltEffect() {
         });
 
         card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
             if (glare) {
                 glare.style.background = `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 60%)`;
             }
@@ -267,4 +261,210 @@ function initBackToTop() {
     btn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
+}
+
+/* ============================================
+   FULLSCREEN HD PROJECT GALLERY MODAL & SLIDER
+   ============================================ */
+function initGalleryModal() {
+    let modal = document.getElementById('image-lightbox');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'image-lightbox';
+        modal.className = 'image-lightbox';
+        modal.innerHTML = `
+            <div class="lightbox-header">
+                <div class="lightbox-title-box">
+                    <h4 class="lightbox-project-title">Galeri Proyek</h4>
+                    <span class="lightbox-counter">1 / 1</span>
+                </div>
+                <div class="lightbox-actions">
+                    <a href="#" target="_blank" class="lightbox-btn" id="lightbox-raw-link" title="Buka Gambar Resolusi Penuh di Tab Baru">
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                    <button class="lightbox-btn lightbox-close" aria-label="Tutup Galeri">
+                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="lightbox-stage">
+                <button class="lightbox-nav prev" aria-label="Foto sebelumnya">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="lightbox-img-wrapper">
+                    <img src="" alt="" class="lightbox-img">
+                </div>
+                <button class="lightbox-nav next" aria-label="Foto berikutnya">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="lightbox-footer">
+                <p class="lightbox-caption"></p>
+                <div class="lightbox-thumbnails"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    const titleEl = modal.querySelector('.lightbox-project-title');
+    const counterEl = modal.querySelector('.lightbox-counter');
+    const rawLink = modal.querySelector('#lightbox-raw-link');
+    const imgEl = modal.querySelector('.lightbox-img');
+    const captionEl = modal.querySelector('.lightbox-caption');
+    const prevBtn = modal.querySelector('.lightbox-nav.prev');
+    const nextBtn = modal.querySelector('.lightbox-nav.next');
+    const thumbsContainer = modal.querySelector('.lightbox-thumbnails');
+    const closeBtn = modal.querySelector('.lightbox-close');
+
+    let currentItems = [];
+    let currentIndex = 0;
+
+    function renderSlide(index) {
+        if (!currentItems.length) return;
+        if (index < 0) index = currentItems.length - 1;
+        if (index >= currentItems.length) index = 0;
+        currentIndex = index;
+
+        const item = currentItems[currentIndex];
+        imgEl.style.opacity = '0';
+        setTimeout(() => {
+            imgEl.src = item.src;
+            imgEl.alt = item.caption || '';
+            imgEl.style.opacity = '1';
+        }, 120);
+
+        rawLink.href = item.src;
+        captionEl.textContent = item.caption || '';
+        counterEl.textContent = `${currentIndex + 1} / ${currentItems.length}`;
+
+        // Update thumbnails active state
+        const allThumbs = thumbsContainer.querySelectorAll('.lightbox-thumb');
+        allThumbs.forEach((t, i) => {
+            t.classList.toggle('active', i === currentIndex);
+        });
+
+        // Hide arrows if only 1 item
+        if (currentItems.length <= 1) {
+            prevBtn.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            thumbsContainer.style.display = 'none';
+        } else {
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            thumbsContainer.style.display = 'flex';
+        }
+    }
+
+    function openGallery(title, items, startIndex = 0) {
+        currentItems = items;
+        titleEl.textContent = title || 'Galeri Proyek';
+        
+        // Build thumbnails
+        thumbsContainer.innerHTML = '';
+        if (items.length > 1) {
+            items.forEach((item, i) => {
+                const thumb = document.createElement('img');
+                thumb.src = item.src;
+                thumb.alt = `Thumbnail ${i + 1}`;
+                thumb.className = 'lightbox-thumb' + (i === startIndex ? ' active' : '');
+                thumb.addEventListener('click', () => renderSlide(i));
+                thumbsContainer.appendChild(thumb);
+            });
+        }
+
+        renderSlide(startIndex);
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            imgEl.src = '';
+            currentItems = [];
+        }, 300);
+    }
+
+    // Navigation events
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderSlide(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderSlide(currentIndex + 1);
+    });
+
+    closeBtn.addEventListener('click', closeGallery);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target.classList.contains('lightbox-stage') || e.target.classList.contains('lightbox-img-wrapper')) {
+            closeGallery();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeGallery();
+        if (e.key === 'ArrowLeft') renderSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') renderSlide(currentIndex + 1);
+    });
+
+    // Mobile touch swipe inside lightbox
+    let touchStartX = 0;
+    modal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    modal.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+            renderSlide(currentIndex + 1);
+        } else if (touchEndX - touchStartX > 50) {
+            renderSlide(currentIndex - 1);
+        }
+    }, { passive: true });
+
+    // Attach trigger to all project gallery wrappers
+    document.querySelectorAll('.project-gallery-trigger').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const title = trigger.dataset.galleryTitle || 'Detail Proyek';
+            const sourceElements = trigger.querySelectorAll('.gallery-sources [data-src]');
+            let items = [];
+
+            if (sourceElements.length) {
+                sourceElements.forEach(el => {
+                    items.push({
+                        src: el.getAttribute('data-src'),
+                        caption: el.getAttribute('data-caption') || ''
+                    });
+                });
+            } else {
+                const mainImg = trigger.querySelector('img');
+                if (mainImg) {
+                    items.push({
+                        src: mainImg.src,
+                        caption: mainImg.alt || title
+                    });
+                }
+            }
+
+            if (items.length) {
+                openGallery(title, items, 0);
+            }
+        });
+    });
+
+    // Also attach to About profile photo
+    const aboutPhoto = document.querySelector('.about-photo-img');
+    if (aboutPhoto) {
+        aboutPhoto.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openGallery('Foto Potret Profesional', [{
+                src: aboutPhoto.src,
+                caption: 'Nabiel Muhammad Imjauzanansyah — AI/ML Engineer & Software Developer'
+            }], 0);
+        });
+    }
 }
