@@ -4,27 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nabiel Muhammad Imjauzanansyah — AI/ML Engineer & Software Developer</title>
+    <title>Nabiel Muhammad Imjauzanansyah — AI/ML &amp; Software Engineer</title>
     <meta name="description"
-        content="Portofolio Nabiel Muhammad Imjauzanansyah — Lulusan Sistem Informasi yang berfokus pada Applied Machine Learning dan Software Engineering. Membangun sistem AI end-to-end dari penerjemah bahasa isyarat real-time (96% akurasi) hingga bot backend produksi Telkomsel.">
+        content="Portofolio Nabiel Muhammad Imjauzanansyah — Lulusan Sistem Informasi (GPA 3.66) berfokus pada Applied Machine Learning dan Software Engineering. Membangun sistem AI end-to-end dari penerjemah BISINDO real-time (Jurnal ICT, 96% akurasi) hingga bot produksi Telkomsel.">
     <meta name="keywords"
-        content="Nabiel Muhammad, AI Engineer, Machine Learning Engineer, Software Developer, Computer Vision, CNN-LSTM, Data Engineer, Banda Aceh, Indonesia, Fresh Graduate">
+        content="Nabiel Muhammad, AI Engineer, Machine Learning Engineer, Software Developer, Computer Vision, CNN-LSTM, Data Engineer, BNSP Web Developer, Banda Aceh, Indonesia">
     <meta name="author" content="Nabiel Muhammad Imjauzanansyah">
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Open Graph / LinkedIn / Facebook preview -->
+    <!-- Open Graph Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Nabiel Muhammad Imjauzanansyah — AI/ML Engineer & Software Developer">
+    <meta property="og:title" content="Nabiel Muhammad Imjauzanansyah — AI/ML &amp; Software Engineer">
     <meta property="og:description"
-        content="Lulusan Sistem Informasi yang membangun sistem AI end-to-end: dari penerjemah bahasa isyarat real-time (96% akurasi) hingga bot backend produksi untuk Telkomsel.">
+        content="Lulusan Sistem Informasi yang membangun sistem AI end-to-end: dari penerjemah bahasa isyarat real-time (96% akurasi) hingga bot backend produksi Telkomsel.">
     <meta property="og:image" content="Foto/NzSignify/Screenshot 2026-02-22 232825.png">
 
-    <!-- Twitter / X preview -->
+    <!-- Twitter Preview -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nabiel Muhammad Imjauzanansyah — AI/ML Engineer & Software Developer">
+    <meta name="twitter:title" content="Nabiel Muhammad Imjauzanansyah — AI/ML &amp; Software Engineer">
     <meta name="twitter:description"
-        content="Lulusan Sistem Informasi yang membangun sistem AI end-to-end: dari penerjemah bahasa isyarat real-time (96% akurasi) hingga bot backend produksi untuk Telkomsel.">
+        content="Lulusan Sistem Informasi yang membangun sistem AI end-to-end: dari penerjemah bahasa isyarat real-time (96% akurasi) hingga bot backend produksi Telkomsel.">
     <meta name="twitter:image" content="Foto/NzSignify/Screenshot 2026-02-22 232825.png">
 
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -35,259 +37,250 @@
 
 <body>
 
-    <div class="noise-overlay" aria-hidden="true"></div>
+    <!-- Scroll Progress Indicator (Framer Motion Driven) -->
+    <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+    <!-- Ambient Subtle Background Mesh -->
+    <div class="ambient-glow" aria-hidden="true">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
 
     <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
 
-    <!-- Global Pill Nav -->
-    <div class="pill-nav-container">
+    <!-- Global Floating Pill Navigation -->
+    <header class="pill-nav-container">
         <nav class="pill-nav" aria-label="Navigasi utama">
-            <a href="#hero" class="pill-link logo-link" data-nav="hero">
-                <span class="hover-circle"></span>
-                <span class="label-stack">
-                    <span class="pill-label">Home</span>
-                    <span class="pill-label-hover">Home</span>
-                </span>
-            </a>
-            <a href="#about" class="pill-link" data-nav="about">
-                <span class="hover-circle"></span>
-                <span class="label-stack">
-                    <span class="pill-label">About</span>
-                    <span class="pill-label-hover">About</span>
-                </span>
-            </a>
-            <a href="#experience" class="pill-link" data-nav="experience">
-                <span class="hover-circle"></span>
-                <span class="label-stack">
-                    <span class="pill-label">Experience</span>
-                    <span class="pill-label-hover">Experience</span>
-                </span>
-            </a>
-            <a href="#projects" class="pill-link" data-nav="projects">
-                <span class="hover-circle"></span>
-                <span class="label-stack">
-                    <span class="pill-label">Projects</span>
-                    <span class="pill-label-hover">Projects</span>
-                </span>
-            </a>
-            <a href="#skills" class="pill-link" data-nav="skills">
-                <span class="hover-circle"></span>
-                <span class="label-stack">
-                    <span class="pill-label">Skills</span>
-                    <span class="pill-label-hover">Skills</span>
-                </span>
-            </a>
-            <a href="#contact" class="pill-link" data-nav="contact">
-                <span class="hover-circle"></span>
-                <span class="label-stack">
-                    <span class="pill-label">Contact</span>
-                    <span class="pill-label-hover">Contact</span>
-                </span>
-            </a>
+            <a href="#hero" class="pill-link active" data-nav="hero">Home</a>
+            <a href="#about" class="pill-link" data-nav="about">About</a>
+            <a href="#experience" class="pill-link" data-nav="experience">Experience</a>
+            <a href="#projects" class="pill-link" data-nav="projects">Projects</a>
+            <a href="#certifications" class="pill-link" data-nav="certifications">Certificates</a>
+            <a href="#skills" class="pill-link" data-nav="skills">Skills</a>
+            <a href="#contact" class="pill-link" data-nav="contact">Contact</a>
         </nav>
-    </div>
+    </header>
 
     <main id="main-content">
 
         <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-        <header id="hero" class="hero dark-hero">
-            <canvas id="particle-canvas" aria-hidden="true"></canvas>
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge reveal-hero" style="--hero-delay: 0ms;">
-                        <span class="badge-dot"></span>
-                        Tersedia untuk Peluang Baru
-                    </div>
-
-                    <span class="hero-greeting reveal-hero" style="--hero-delay: 80ms;">Halo, saya</span>
-                    <h1 class="hero-name reveal-hero" style="--hero-delay: 160ms;">Nabiel Muhammad Imjauzanansyah</h1>
-
-                    <div class="hero-role reveal-hero" style="--hero-delay: 240ms;">
-                        <span class="role-prefix">Saya seorang</span>
-                        <span class="typed-text" aria-live="polite"></span><span class="cursor">|</span>
-                    </div>
-
-                    <p class="hero-description reveal-hero" style="--hero-delay: 320ms;">
-                        Lulusan Sistem Informasi yang berfokus pada <strong>Applied Machine Learning</strong> dan
-                        <strong>Software Engineering</strong>. Saya merancang arsitektur data end-to-end — mulai dari
-                        pipeline RAG on-premise hingga sistem backend yang siap produksi. Ke depan, saya ingin terus
-                        mendalami AI/ML dan data engineering di lingkungan yang membangun produk skala nyata.
-                    </p>
-
-                    <div class="hero-actions reveal-hero" style="--hero-delay: 400ms;">
-                        <a href="#projects" class="btn btn-primary dark-btn-primary">
-                            <i class="fa-solid fa-rocket" aria-hidden="true"></i> Lihat Proyek
-                        </a>
-                        <a href="CV/Nabiel_Muhammad_CV_AIML.pdf" target="_blank"
-                            class="btn btn-secondary dark-btn-secondary">
-                            <i class="fa-solid fa-download" aria-hidden="true"></i> CV (AI/ML)
-                        </a>
-                        <a href="CV/Nabiel_Muhammad_CV_Software Engineering.pdf" target="_blank"
-                            class="btn btn-secondary dark-btn-secondary">
-                            <i class="fa-solid fa-download" aria-hidden="true"></i> CV (Software Engineering)
-                        </a>
-                    </div>
-
-                    <div class="hero-socials reveal-hero" style="--hero-delay: 480ms;">
-                        <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener"
-                            class="social-icon-link" aria-label="GitHub">
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank" rel="noopener"
-                            class="social-icon-link" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="mailto:nabiel.zmuhammad11@gmail.com" class="social-icon-link" aria-label="Email">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-visual reveal-hero" style="--hero-delay: 300ms;">
-                    <div class="code-window">
-                        <div class="code-header">
-                            <div class="code-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <span class="code-title"><i class="fa-brands fa-python" style="color: #38bdf8; margin-right: 6px;" aria-hidden="true"></i>nabiel.py</span>
-                            <span class="code-badge">Python 3.11</span>
+             HERO SECTION
+             ============================================ -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left: Bio & CTAs -->
+                    <div class="hero-content reveal">
+                        <div class="hero-status-pill">
+                            <span class="pulse-dot"></span>
+                            <span>Tersedia untuk Peluang AI/ML &amp; Software</span>
                         </div>
-                        <div class="code-body">
-                            <div class="line-numbers" aria-hidden="true">
-                                <span>1</span>
-                                <span>2</span>
-                                <span>3</span>
-                                <span>4</span>
-                                <span>5</span>
-                                <span>6</span>
-                                <span>7</span>
-                                <span>8</span>
-                                <span>9</span>
-                                <span>10</span>
-                                <span>11</span>
-                                <span>12</span>
+
+                        <span class="hero-greeting">Halo, saya</span>
+                        <h1 class="hero-name">Nabiel Muhammad <br><span class="hero-name-sub">Imjauzanansyah</span></h1>
+
+                        <div class="hero-role-wrapper">
+                            <span class="hero-role-lead">Saya berfokus pada</span>
+                            <span class="typed-text" aria-live="polite"></span><span class="typing-cursor">|</span>
+                        </div>
+
+                        <p class="hero-bio">
+                            Lulusan Sistem Informasi (GPA <strong>3.66/4.00</strong>) dari Universitas Muhammadiyah Sumatera Utara.
+                            Fokus pada <strong>Applied Machine Learning</strong> dan <strong>Software Engineering</strong> — membangun
+                            solusi end-to-end dari model CNN-LSTM real-time (Jurnal ICT, akurasi 96%) hingga arsitektur bot produksi berkapasitas 1.000+ tx/jam di Telkomsel.
+                        </p>
+
+                        <div class="hero-cta-group">
+                            <a href="#projects" class="btn btn-primary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                                <span>Lihat Portofolio</span>
+                            </a>
+                            <a href="CV/Nabiel_Muhammad_CV_AIML.pdf" target="_blank" class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                <span>CV (AI/ML)</span>
+                            </a>
+                            <a href="CV/Nabiel_Muhammad_CV_Software Engineering.pdf" target="_blank" class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                <span>CV (Software Dev)</span>
+                            </a>
+                        </div>
+
+                        <div class="hero-socials">
+                            <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener"
+                                class="social-icon-btn" aria-label="GitHub Nabiel Muhammad" title="GitHub">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            </a>
+                            <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank" rel="noopener"
+                                class="social-icon-btn" aria-label="LinkedIn Nabiel Muhammad" title="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="mailto:nabiel.zmuhammad11@gmail.com"
+                                class="social-icon-btn" aria-label="Email Nabiel Muhammad" title="Kirim Email">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Modern Crisp IDE Window (nabiel.py) -->
+                    <div class="hero-visual reveal delay-100">
+                        <div class="code-window" id="hero-code-window">
+                            <!-- macOS Style Header -->
+                            <div class="code-header">
+                                <div class="code-window-controls">
+                                    <span class="control-dot dot-close"></span>
+                                    <span class="control-dot dot-minimize"></span>
+                                    <span class="control-dot dot-expand"></span>
+                                </div>
+                                <div class="code-tab">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="M11.91 0c-3.13 0-5.46.26-6.19.78-.73.51-1.07 1.34-1.07 2.53v2.33h7.45v1.04H2.46C1.29 6.68.3 7.55.08 8.68c-.27 1.39-.27 2.82 0 4.22.21 1.09 1.13 1.95 2.38 2.01h1.56v-2.09c0-1.42.45-2.52 1.35-3.32.9-.8 2.19-1.2 3.86-1.2h4.86V6.16c0-1.89-1.57-3.42-3.46-3.42H8.38c.63-.42 1.77-.74 3.53-.74h3.76c1.19 0 2.06-.87 2.06-2.06V.37C16.32.12 14.54 0 11.91 0zm-2.09 1.63c.43 0 .78.35.78.78s-.35.78-.78.78-.78-.35-.78-.78.35-.78.78-.78zm2.27 15.69c-1.19 0-2.06.87-2.06 2.06v.38c1.41.25 3.19.37 5.82.37 3.13 0 5.46-.26 6.19-.78.73-.51 1.07-1.34 1.07-2.53v-2.33h-7.45v-1.04h9.64c1.17 0 2.16-.87 2.38-2 .27-1.39.27-2.82 0-4.22-.21-1.09-1.13-1.95-2.38-2.01h-1.56v2.09c0 1.42-.45 2.52-1.35 3.32-.9.8-2.19 1.2-3.86 1.2h-4.86v2.14c0 1.89 1.57 3.42 3.46 3.42h2.25c-.63.42-1.77.74-3.53.74h-3.76zm4.18 5.05c-.43 0-.78-.35-.78-.78s.35-.78.78-.78.78.35.78.78-.35.78-.78.78z"/></svg>
+                                    <span>nabiel.py</span>
+                                </div>
+                                <div class="code-header-actions">
+                                    <button class="code-copy-btn" id="code-copy-btn" aria-label="Salin Kode Python">
+                                        <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                        <svg class="check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <span class="copy-label">Copy</span>
+                                    </button>
+                                </div>
                             </div>
-                            <pre class="code-content"><code><span class="code-keyword">class</span> <span class="code-class">Engineer</span>:
-    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):
-        self.name = <span class="code-string">"Nabiel Muhammad"</span>
-        self.role = <span class="code-string">"AI/ML &amp; Software Dev"</span>
-        self.location = <span class="code-string">"Banda Aceh, ID"</span>
-        self.stack = [<span class="code-string">"Python"</span>, <span class="code-string">"FastAPI"</span>, <span class="code-string">"RAG"</span>]
 
-    <span class="code-keyword">def</span> <span class="code-func">build_future</span>(self):
-        <span class="code-keyword">return</span> <span class="code-string">"Deploying scalable AI"</span>
+                            <!-- Editor Body: Unified row structure guarantees zero desync -->
+                            <div class="code-body">
+                                <div class="code-editor-rows" id="python-code-content" role="region" aria-label="Cuplikan Kode Python">
+                                    <div class="code-row"><span class="line-num">1</span><span class="code-text"><span class="token-keyword">class</span> <span class="token-class">NabielMuhammad</span>:</span></div>
+                                    <div class="code-row"><span class="line-num">2</span><span class="code-text">    <span class="token-keyword">def</span> <span class="token-func">__init__</span>(<span class="token-param">self</span>):</span></div>
+                                    <div class="code-row"><span class="line-num">3</span><span class="code-text">        <span class="token-param">self</span>.<span class="token-prop">role</span> = <span class="token-string">"AI/ML &amp; Software Engineer"</span></span></div>
+                                    <div class="code-row"><span class="line-num">4</span><span class="code-text">        <span class="token-param">self</span>.<span class="token-prop">origin</span> = <span class="token-string">"Banda Aceh, Indonesia"</span></span></div>
+                                    <div class="code-row"><span class="line-num">5</span><span class="code-text">        <span class="token-param">self</span>.<span class="token-prop">education</span> = <span class="token-string">"S1 Sistem Informasi (GPA 3.66)"</span></span></div>
+                                    <div class="code-row"><span class="line-num">6</span><span class="code-text">        <span class="token-param">self</span>.<span class="token-prop">stack</span> = [<span class="token-string">"Python"</span>, <span class="token-string">"TensorFlow"</span>, <span class="token-string">"FastAPI"</span>, <span class="token-string">"RAG"</span>]</span></div>
+                                    <div class="code-row"><span class="line-num">7</span><span class="code-text"></span></div>
+                                    <div class="code-row"><span class="line-num">8</span><span class="code-text">    <span class="token-keyword">def</span> <span class="token-func">build_impact</span>(<span class="token-param">self</span>):</span></div>
+                                    <div class="code-row"><span class="line-num">9</span><span class="code-text">        <span class="token-keyword">return</span> <span class="token-string">"Transforming AI research into production"</span></span></div>
+                                    <div class="code-row"><span class="line-num">10</span><span class="code-text"></span></div>
+                                    <div class="code-row"><span class="line-num">11</span><span class="code-text">me = <span class="token-class">NabielMuhammad</span>()</span></div>
+                                    <div class="code-row"><span class="line-num">12</span><span class="code-text"><span class="token-builtin">print</span>(me.<span class="token-func">build_impact</span>())</span></div>
+                                </div>
+                            </div>
 
-nabiel = Engineer()
-nabiel.build_future()</code></pre>
+                            <!-- VS Code / IDE Status Bar -->
+                            <div class="code-status-bar">
+                                <div class="status-left">
+                                    <span class="status-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg> main</span>
+                                    <span class="status-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> 0 errors</span>
+                                </div>
+                                <div class="status-right">
+                                    <span class="status-item">Python 3.11</span>
+                                    <span class="status-item">UTF-8</span>
+                                </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- Tech Stack Marquee -->
+        <!-- ============================================
+             TECH STACK BANNER (Infinite Marquee)
+             ============================================ -->
         <div class="marquee-container" aria-hidden="true">
-            <div class="marquee-content">
-                <span>Applied AI</span><span class="star">✧</span>
-                <span>Machine Learning</span><span class="star">✧</span>
-                <span>Computer Vision</span><span class="star">✧</span>
-                <span>Python</span><span class="star">✧</span>
-                <span>TensorFlow</span><span class="star">✧</span>
-                <span>NLP</span><span class="star">✧</span>
-                <span>Backend Architecture</span><span class="star">✧</span>
-                <span>Data Engineering</span><span class="star">✧</span>
-                <span>React.js</span><span class="star">✧</span>
-                <span>Node.js</span><span class="star">✧</span>
+            <div class="marquee-track">
+                <!-- Group 1 -->
+                <div class="marquee-item"><i class="devicon-python-plain"></i> Python</div>
+                <div class="marquee-item"><i class="devicon-tensorflow-original"></i> TensorFlow</div>
+                <div class="marquee-item"><i class="devicon-fastapi-plain"></i> FastAPI</div>
+                <div class="marquee-item"><i class="fa-solid fa-brain"></i> CNN-LSTM</div>
+                <div class="marquee-item"><i class="fa-solid fa-magnifying-glass"></i> RAG Pipeline</div>
+                <div class="marquee-item"><i class="devicon-nodejs-plain"></i> Node.js</div>
+                <div class="marquee-item"><i class="devicon-postgresql-plain"></i> PostgreSQL</div>
+                <div class="marquee-item"><i class="devicon-docker-plain"></i> Docker</div>
+                <div class="marquee-item"><i class="devicon-react-original"></i> React.js</div>
+                <div class="marquee-item"><i class="devicon-pandas-plain"></i> Pandas</div>
 
-                <span>Applied AI</span><span class="star">✧</span>
-                <span>Machine Learning</span><span class="star">✧</span>
-                <span>Computer Vision</span><span class="star">✧</span>
-                <span>Python</span><span class="star">✧</span>
-                <span>TensorFlow</span><span class="star">✧</span>
-                <span>NLP</span><span class="star">✧</span>
-                <span>Backend Architecture</span><span class="star">✧</span>
-                <span>Data Engineering</span><span class="star">✧</span>
-                <span>React.js</span><span class="star">✧</span>
-                <span>Node.js</span><span class="star">✧</span>
+                <!-- Duplicate for seamless scroll -->
+                <div class="marquee-item"><i class="devicon-python-plain"></i> Python</div>
+                <div class="marquee-item"><i class="devicon-tensorflow-original"></i> TensorFlow</div>
+                <div class="marquee-item"><i class="devicon-fastapi-plain"></i> FastAPI</div>
+                <div class="marquee-item"><i class="fa-solid fa-brain"></i> CNN-LSTM</div>
+                <div class="marquee-item"><i class="fa-solid fa-magnifying-glass"></i> RAG Pipeline</div>
+                <div class="marquee-item"><i class="devicon-nodejs-plain"></i> Node.js</div>
+                <div class="marquee-item"><i class="devicon-postgresql-plain"></i> PostgreSQL</div>
+                <div class="marquee-item"><i class="devicon-docker-plain"></i> Docker</div>
+                <div class="marquee-item"><i class="devicon-react-original"></i> React.js</div>
+                <div class="marquee-item"><i class="devicon-pandas-plain"></i> Pandas</div>
             </div>
         </div>
 
         <!-- ============================================
-         ABOUT SECTION
-         ============================================ -->
-        <section id="about" class="section dark-section">
+             ABOUT SECTION
+             ============================================ -->
+        <section id="about" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-tag">01. Tentang Saya</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Kenali <span
-                            class="gradient-text">Perjalanan</span> Saya</h2>
+                    <span class="section-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 01. Tentang Saya</span>
+                    <h2 class="section-title">Menghubungkan Riset AI dengan <span class="gradient-text">Dampak Nyata</span></h2>
+                    <p class="section-subtitle">Dedikasi untuk mengembangkan sistem komputasi cerdas yang dapat diandalkan di lingkungan operasional skala nyata.</p>
                 </div>
 
                 <div class="about-grid">
-                    <div class="about-image-wrapper reveal delay-100">
-                        <div class="about-image" title="Klik untuk melihat foto resolusi penuh">
-                            <img src="Foto/NzM.JPG"
-                                alt="Foto potret Nabiel Muhammad Imjauzanansyah, AI/ML Engineer dari Banda Aceh"
-                                class="about-photo-img" loading="lazy">
+                    <!-- Photo Card -->
+                    <div class="about-photo-card reveal project-gallery-trigger" data-gallery-title="Foto Potret Profesional">
+                        <div class="about-photo-wrapper">
+                            <img src="Foto/NzM.JPG" alt="Potret Nabiel Muhammad Imjauzanansyah, AI/ML Engineer" class="about-photo-img" loading="lazy">
+                        </div>
+                        <div class="about-photo-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div class="about-photo-badge-text">
+                                <strong>Banda Aceh, Indonesia</strong>
+                                <span>Fresh Graduate • Siap Relokasi/Remote</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="about-content reveal delay-200">
-                        <h3 class="about-heading">Lulusan Sistem Informasi yang Antusias Memecahkan Masalah</h3>
-                        <p class="about-text">
-                            Saya baru menyelesaikan studi Sistem Informasi dengan GPA <strong>3.66/4.00</strong> di
-                            Universitas Muhammadiyah Sumatera Utara. Fokus utama saya adalah menjembatani riset AI
-                            dengan implementasi perangkat lunak dunia nyata.
+                    <!-- Narrative & Bento Stats -->
+                    <div class="about-content reveal delay-100">
+                        <h3 class="about-heading">Lulusan Sistem Informasi Berorientasi Solusi</h3>
+                        <p class="about-desc-paragraph">
+                            Saya menyelesaikan studi S1 Sistem Informasi di <strong>Universitas Muhammadiyah Sumatera Utara</strong> dengan indeks prestasi kumulatif <strong>3.66/4.00</strong>. Fokus studi dan proyek mandiri saya berpusat pada perancangan arsitektur deep learning, pengolahan data tabular/citra, dan rekayasa backend.
                         </p>
-                        <p class="about-text">
-                            Tugas akhir saya melibatkan pengembangan penerjemah bahasa isyarat BISINDO secara real-time
-                            menggunakan arsitektur hybrid CNN-LSTM, yang berhasil dipublikasikan di Jurnal ICT.
-                            <a href="https://www.ejournal.marqchainstitute.or.id/index.php/JICT/article/view/320"
-                                target="_blank" class="inline-link">Baca publikasinya <i
-                                    class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"
-                                    style="font-size:12px;"></i></a>
+                        <p class="about-desc-paragraph">
+                            Tugas akhir saya mengembangkan penerjemah bahasa isyarat BISINDO secara <em>real-time</em> menggunakan arsitektur gabungan CNN-LSTM dan MediaPipe Hands, dengan akurasi validasi mencapai <strong>96%</strong> pada 11.000 frame data, serta telah dipublikasikan di Jurnal Ilmiah Komputasi (ICT).
+                            <a href="https://www.ejournal.marqchainstitute.or.id/index.php/JICT/article/view/320" target="_blank" rel="noopener" class="about-link">
+                                Baca publikasi ilmiah <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                         </p>
-                        <p class="about-text">
-                            Saat ini saya juga membangun ekosistem <em>multi-agent AI</em> lokal berbasis Ollama &
-                            CrewAI di luar pekerjaan formal — cara saya terus mengasah kemampuan applied AI di luar
-                            kelas.
+                        <p class="about-desc-paragraph">
+                            Selain itu, saya aktif mengeksplorasi ekosistem <em>multi-agent AI</em> lokal (Ollama + CrewAI) serta arsitektur Retrieval-Augmented Generation (RAG) untuk dokumen enterprise.
                         </p>
 
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <i class="fa-solid fa-graduation-cap detail-icon" style="color: #3b82f6;"
-                                    aria-hidden="true"></i>
+                        <!-- 4 Bento Highlights -->
+                        <div class="about-stats-grid">
+                            <div class="about-stat-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="about-stat-icon" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                                 <div>
-                                    <span class="detail-label">Pendidikan</span>
-                                    <span class="detail-value">S1 Sistem Informasi — GPA 3.66</span>
+                                    <span class="about-stat-label">Pendidikan</span>
+                                    <span class="about-stat-val">S1 Sistem Informasi (GPA 3.66)</span>
                                 </div>
                             </div>
-                            <div class="detail-item">
-                                <i class="fa-solid fa-briefcase detail-icon" style="color: #8b5cf6;"
-                                    aria-hidden="true"></i>
+                            <div class="about-stat-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="about-stat-icon" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                                 <div>
-                                    <span class="detail-label">Pengalaman</span>
-                                    <span class="detail-value">Telkomsel Intern & DBS Trainee</span>
+                                    <span class="about-stat-label">Publikasi Riset</span>
+                                    <span class="about-stat-val">Jurnal ICT (Akurasi 96%)</span>
                                 </div>
                             </div>
-                            <div class="detail-item">
-                                <i class="fa-solid fa-map-marker-alt detail-icon" style="color: #06b6d4;"
-                                    aria-hidden="true"></i>
+                            <div class="about-stat-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="about-stat-icon" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                                 <div>
-                                    <span class="detail-label">Lokasi</span>
-                                    <span class="detail-value">Banda Aceh, Indonesia</span>
+                                    <span class="about-stat-label">Pengalaman Nyata</span>
+                                    <span class="about-stat-val">Telkomsel &amp; DBS Foundation</span>
                                 </div>
                             </div>
-                            <div class="detail-item">
-                                <i class="fa-solid fa-certificate detail-icon" style="color: #f59e0b;"
-                                    aria-hidden="true"></i>
+                            <div class="about-stat-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="about-stat-icon" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                                 <div>
-                                    <span class="detail-label">Sertifikasi</span>
-                                    <span class="detail-value">15+ Sertifikat Profesional</span>
+                                    <span class="about-stat-label">Kompetensi Resmi</span>
+                                    <span class="about-stat-val">BNSP Web &amp; 15+ Sertifikat</span>
                                 </div>
                             </div>
                         </div>
@@ -297,57 +290,56 @@ nabiel.build_future()</code></pre>
         </section>
 
         <!-- ============================================
-         EXPERIENCE SECTION
-         ============================================ -->
-        <section id="experience" class="section bg-canvas">
+             EXPERIENCE SECTION
+             ============================================ -->
+        <section id="experience" class="section" style="background: var(--color-bg-canvas);">
             <div class="container">
-                <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
-                    <span class="section-tag">02. Pengalaman</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Pengalaman <span
-                            class="gradient-text">Profesional</span></h2>
+                <div class="section-header reveal">
+                    <span class="section-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 02. Pengalaman</span>
+                    <h2 class="section-title">Rekam Jejak <span class="gradient-text">Profesional</span></h2>
+                    <p class="section-subtitle">Pengalaman industri dan program intensif berskala nasional dalam rekayasa perangkat lunak dan machine learning.</p>
                 </div>
 
-                <div class="bento-grid">
-                    <!-- Telkomsel -->
-                    <div class="bento-card col-6 reveal delay-100">
-                        <div class="bento-card-content">
-                            <span class="text-meta">Juni 2025 — September 2025</span>
-                            <h3 class="bento-title">Software Developer Intern<br><span
-                                    style="color: var(--color-gray);">Telkomsel</span></h3>
-                            <ul class="exp-bullets">
-                                <li>Membangun bot Telegram distribusi voucher yang terintegrasi REST API SAMOSIR.LIVE
-                                </li>
-                                <li>Menangani <strong>1.000+ transaksi/jam</strong> dengan implementasi enkripsi E2E dan
-                                    2FA</li>
-                                <li>Beroperasi <strong>10+ bulan</strong> di lingkungan produksi tanpa downtime kritis
-                                </li>
-                                <li>Menghemat <strong>15+ jam kerja manual/minggu</strong> melalui otomatisasi
-                                    distribusi</li>
-                            </ul>
-                            <div class="project-links" style="margin-top: 16px;">
-                                <a href="Sertifikat/Sertifikat Telkomsel.pdf" target="_blank" rel="noopener"
-                                    class="project-link-btn"
-                                    style="background: rgba(6,182,212,0.1); color: #06b6d4; border-color: rgba(6,182,212,0.2);">
-                                    <i class="fa-solid fa-award" aria-hidden="true"></i> Lihat Evaluasi Mentor
-                                </a>
-                            </div>
+                <div class="experience-grid">
+                    <!-- Telkomsel Card -->
+                    <div class="exp-card reveal delay-100">
+                        <div class="exp-header">
+                            <span class="exp-period">Juni 2025 — September 2025</span>
+                            <h3 class="exp-title">Software Developer Intern</h3>
+                            <div class="exp-company">PT Telekomunikasi Selular (Telkomsel)</div>
+                        </div>
+                        <ul class="exp-bullets">
+                            <li>Merancang dan membangun bot Telegram otomatisasi distribusi voucher yang terhubung dengan REST API internal <strong>SAMOSIR.LIVE</strong>.</li>
+                            <li>Menangani lonjakan transaksi hingga <strong>1.000+ request/jam</strong> dengan sistem keamanan enkripsi End-to-End dan 2FA.</li>
+                            <li>Sistem beroperasi stabil selama <strong>10+ bulan di lingkungan produksi</strong> tanpa kegagalan kritis.</li>
+                            <li>Menghemat estimasi <strong>15+ jam kerja manual per minggu</strong> untuk tim operasional lapangan.</li>
+                        </ul>
+                        <div class="exp-footer">
+                            <a href="Sertifikat/Sertifikat Telkomsel.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                                <span>Lihat Surat Evaluasi Mentor Telkomsel</span>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- DBS Foundation -->
-                    <div class="bento-card col-6 reveal delay-200">
-                        <div class="bento-card-content">
-                            <span class="text-meta">Februari 2025 — Agustus 2025</span>
-                            <h3 class="bento-title">ML Engineer Trainee<br><span style="color: var(--color-gray);">DBS
-                                    Foundation × Dicoding</span></h3>
-                            <ul class="exp-bullets">
-                                <li>Lulus program intensif <strong>Coding Camp Machine Learning</strong> (450+ jam)</li>
-                                <li>Membangun <strong>5+ purwarupa</strong> data-driven: sistem rekomendasi, klasifikasi
-                                    teks NLP, dan computer vision</li>
-                                <li>Menggunakan Scikit-learn, TensorFlow, dan Keras untuk model deployment</li>
-                                <li>Capstone project: ParentCare Analytics — platform analisis gaya pengasuhan bertenaga
-                                    AI</li>
-                            </ul>
+                    <!-- DBS Foundation Card -->
+                    <div class="exp-card reveal delay-200">
+                        <div class="exp-header">
+                            <span class="exp-period">Februari 2025 — Agustus 2025</span>
+                            <h3 class="exp-title">Machine Learning Engineer Trainee</h3>
+                            <div class="exp-company">DBS Foundation × Dicoding Indonesia</div>
+                        </div>
+                        <ul class="exp-bullets">
+                            <li>Menyelesaikan program intensif <strong>Coding Camp Machine Learning</strong> (450+ jam kurikulum berstandar industri).</li>
+                            <li>Membangun <strong>5+ purwarupa berbasis data</strong>: sistem rekomendasi konten, klasifikasi teks NLP, dan computer vision.</li>
+                            <li>Memimpin proyek capstone <em>ParentCare Analytics</em> — platform web bertenaga model Random Forest untuk analisis pola pengasuhan anak.</li>
+                            <li>Menerapkan model deployment menggunakan Scikit-learn, TensorFlow, dan integrasi API ke frontend Vercel.</li>
+                        </ul>
+                        <div class="exp-footer">
+                            <a href="Sertifikat/[Coding Camp 2025] Certificate - MC384D5Y0993.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                                <span>Lihat Sertifikat Kelulusan Coding Camp</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -355,663 +347,608 @@ nabiel.build_future()</code></pre>
         </section>
 
         <!-- ============================================
-         PROJECTS SECTION
-         ============================================ -->
-        <section id="projects" class="section bg-paper">
+             PROJECTS SECTION
+             ============================================ -->
+        <section id="projects" class="section">
             <div class="container">
-                <div class="section-header reveal" style="margin-bottom: var(--space-lg);">
-                    <span class="section-tag">03. Proyek</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Proyek <span
-                            class="gradient-text">Utama</span></h2>
+                <div class="section-header text-center reveal">
+                    <span class="section-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> 03. Portofolio</span>
+                    <h2 class="section-title">Karya &amp; <span class="gradient-text">Implementasi Terpilih</span></h2>
+                    <p class="section-subtitle">Kompilasi proyek sistem AI terapan, aplikasi full-stack modern, dan pipeline data berkinerja tinggi.</p>
                 </div>
 
                 <!-- Filter Bar -->
-                <div class="filter-bar reveal" style="margin-bottom: var(--space-xl);">
-                    <button class="filter-btn active" data-filter="all">Semua</button>
-                    <button class="filter-btn" data-filter="ai">AI / ML</button>
-                    <button class="filter-btn" data-filter="web">Full-Stack</button>
-                    <button class="filter-btn" data-filter="data">Data</button>
+                <div class="filter-bar reveal">
+                    <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+                    <button class="filter-btn" data-filter="ai">AI / Machine Learning</button>
+                    <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+                    <button class="filter-btn" data-filter="data">Data Engineering</button>
                 </div>
 
-                <div class="bento-grid">
+                <div class="projects-container">
 
-                    <!-- NzSignify (Hero Project) -->
-                    <div class="bento-card col-12 horizontal reveal project-card" data-category="ai">
-                        <div class="glare"></div>
-                        <div class="bento-card-content">
-                            <span class="text-meta">Final Year Project · AI / ML</span>
-                            <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 40px);">NzSignify — BISINDO
-                                Translator</h3>
-                            <p class="bento-desc" style="max-width: 480px; margin-bottom: var(--space-md);">
-                                <strong>Problem:</strong> Komunitas tuna rungu Indonesia kesulitan berkomunikasi karena
-                                belum ada penerjemah BISINDO digital real-time.<br>
-                                <strong>Solution:</strong> Sistem penerjemah berbasis web menggunakan arsitektur hybrid
-                                CNN-LSTM dengan deteksi landmark tangan MediaPipe.<br>
-                                <strong>Impact:</strong> Akurasi validasi <strong>96%</strong> pada dataset
-                                <strong>11.000 frame</strong>, dipublikasikan di Jurnal ICT.
-                            </p>
-                            <div class="tag-container">
-                                <span class="tag">Computer Vision</span>
-                                <span class="tag">CNN-LSTM</span>
-                                <span class="tag">MediaPipe</span>
-                                <span class="tag">React.js</span>
-                                <span class="tag">TTS</span>
+                    <!-- Spotlight 1: NzSignify (BISINDO Translator) -->
+                    <div class="project-card spotlight reveal project-item" data-category="ai web">
+                        <div class="project-card-body">
+                            <div>
+                                <span class="project-meta">Skripsi &amp; Riset Terpublikasi · Computer Vision</span>
+                                <h3 class="project-title">NzSignify — BISINDO Sign Language Translator</h3>
+                                <div class="project-desc-block">
+                                    <div class="project-desc-line"><strong>Tantangan:</strong> Akses komunikasi tuna rungu Indonesia terbatas karena minimnya penerjemah bahasa isyarat digital real-time tanpa perangkat sensor tambahan.</div>
+                                    <div class="project-desc-line"><strong>Solusi:</strong> Aplikasi web berbasis deep learning arsitektur hybrid CNN-LSTM yang dipadukan dengan ekstraksi koordinat landmark tangan MediaPipe via webcam browser standar.</div>
+                                    <div class="project-desc-line"><strong>Dampak:</strong> Meraih akurasi validasi <strong>96%</strong> pada dataset 11.000 frame video dan berhasil diterbitkan pada Jurnal Ilmiah Komputasi (ICT).</div>
+                                </div>
+                                <div class="tag-container">
+                                    <span class="tag">CNN-LSTM</span>
+                                    <span class="tag">MediaPipe</span>
+                                    <span class="tag">TensorFlow</span>
+                                    <span class="tag">React.js</span>
+                                    <span class="tag">Web Speech TTS</span>
+                                </div>
                             </div>
-                            <div class="project-links">
-                                <a href="https://github.com/NabielMuhammad/nzsignify" target="_blank" rel="noopener"
-                                    class="project-link-btn">
-                                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                            <div class="project-actions">
+                                <a href="https://github.com/NabielMuhammad/nzsignify" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
                                 </a>
-                                <a href="https://www.ejournal.marqchainstitute.or.id/index.php/JICT/article/view/320"
-                                    target="_blank" rel="noopener" class="project-link-btn">
-                                    <i class="fa-solid fa-newspaper" aria-hidden="true"></i> Jurnal
+                                <a href="https://www.ejournal.marqchainstitute.or.id/index.php/JICT/article/view/320" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Baca Jurnal ICT
                                 </a>
                             </div>
                         </div>
-                        <div class="bento-image-wrapper project-gallery-trigger" data-gallery-title="NzSignify — BISINDO Translator">
-                            <img src="Foto/NzSignify/Screenshot 2026-02-22 232825.png"
-                                alt="Dashboard Utama NzSignify — Real-Time BISINDO Translator"
-                                class="main-project-img" loading="lazy">
+                        <div class="project-img-wrapper project-gallery-trigger" data-gallery-title="NzSignify — BISINDO Translator">
+                            <img src="Foto/NzSignify/Screenshot 2026-02-22 232825.png" alt="Dashboard Utama Penerjemah Bahasa Isyarat BISINDO NzSignify" class="project-img" loading="lazy">
                             <div class="gallery-badge">
-                                <i class="fa-solid fa-images" aria-hidden="true"></i>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                                 <span>Galeri (3 Foto)</span>
-                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
                             </div>
                             <div class="gallery-sources" style="display: none;">
-                                <div data-src="Foto/NzSignify/Screenshot 2026-02-22 232825.png" data-caption="Dashboard & Landing Page Utama — Penerjemah BISINDO Real-Time"></div>
-                                <div data-src="Foto/NzSignify/Screenshot 2026-02-22 232813.png" data-caption="Antarmuka Deteksi Real-Time Bahasa Isyarat Menggunakan Kamera"></div>
-                                <div data-src="Foto/NzSignify/grafik_hasil_training.png" data-caption="Grafik Akurasi & Loss Pelatihan Model CNN-LSTM (Validasi 96% pada 11.000 Frame)"></div>
+                                <div data-src="Foto/NzSignify/Screenshot 2026-02-22 232825.png" data-caption="Dashboard &amp; Landing Page Utama — Penerjemah BISINDO Real-Time"></div>
+                                <div data-src="Foto/NzSignify/Screenshot 2026-02-22 232813.png" data-caption="Antarmuka Deteksi Real-Time Bahasa Isyarat Kamera Webcam"></div>
+                                <div data-src="Foto/NzSignify/grafik_hasil_training.png" data-caption="Grafik Konvergensi Loss &amp; Akurasi Model CNN-LSTM (Validasi 96% pada 11.000 Frame)"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Enterprise RAG Knowledge Assistant -->
-                    <div class="bento-card col-12 horizontal reveal delay-100 project-card" data-category="ai">
-                        <div class="glare"></div>
-                        <div class="bento-image-wrapper project-gallery-trigger" style="flex: 1.2;" data-gallery-title="Enterprise RAG Knowledge Assistant">
-                            <img src="Foto/rag-assistant.jpg"
-                                alt="Dashboard Chat Enterprise RAG Knowledge Assistant"
-                                class="main-project-img" loading="lazy">
-                            <div class="gallery-badge">
-                                <i class="fa-solid fa-images" aria-hidden="true"></i>
-                                <span>Lihat Tampilan</span>
-                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
+                    <!-- Spotlight 2: Enterprise RAG Knowledge Assistant -->
+                    <div class="project-card spotlight reverse reveal delay-100 project-item" data-category="ai web">
+                        <div class="project-card-body">
+                            <div>
+                                <span class="project-meta">Applied GenAI · 100% On-Premise · Multi-Turn RAG</span>
+                                <h3 class="project-title">Enterprise RAG Knowledge Assistant</h3>
+                                <div class="project-desc-block">
+                                    <div class="project-desc-line"><strong>Tantangan:</strong> Pencarian manual dokumen SOP internal organisasi rawan miskomunikasi, sementara pengiriman data sensitif ke cloud LLM melanggar privasi perusahaan.</div>
+                                    <div class="project-desc-line"><strong>Solusi:</strong> Pipeline RAG end-to-end 100% on-premise: ekstraksi dokumen, vector store Qdrant + FastEmbed semantik, dan LLM lokal LLaMA 3 via Ollama dengan guardrail anti-halusinasi.</div>
+                                    <div class="project-desc-line"><strong>Dampak:</strong> Skor kesamaan semantik <strong>78–88%</strong>, zero data leakage ke cloud pihak ketiga, serta <strong>18/18 tes otomatis lulus (100%)</strong>.</div>
+                                </div>
+                                <div class="tag-container">
+                                    <span class="tag">RAG Pipeline</span>
+                                    <span class="tag">LLaMA 3</span>
+                                    <span class="tag">Qdrant Vector DB</span>
+                                    <span class="tag">FastAPI</span>
+                                    <span class="tag">Next.js 16</span>
+                                    <span class="tag">JWT + RBAC</span>
+                                </div>
                             </div>
-                            <div class="gallery-sources" style="display: none;">
-                                <div data-src="Foto/rag-assistant.jpg" data-caption="Antarmuka Chat Enterprise RAG — Tanya Jawab Dokumen Internal dengan Citations & Guardrail Anti-Halusinasi (100% On-Premise)"></div>
-                            </div>
-                        </div>
-                        <div class="bento-card-content" style="flex: 1;">
-                            <span class="text-meta">Independent Project · AI / ML · Full-Stack</span>
-                            <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 36px);">Enterprise RAG Knowledge
-                                Assistant</h3>
-                            <p class="bento-desc" style="margin-bottom: var(--space-md);">
-                                <strong>Problem:</strong> Karyawan menghabiskan waktu signifikan mencari informasi di
-                                dokumen internal secara manual. Keyword search tidak memahami konteks, dan LLM berisiko
-                                halusinasi.<br>
-                                <strong>Solution:</strong> Sistem tanya jawab dokumen berbasis RAG pipeline end-to-end
-                                yang 100% on-premise — menggabungkan pencarian semantik (Qdrant + FastEmbed) dengan LLM
-                                lokal (LLaMA 3 via Ollama), dilengkapi anti-hallucination guardrail, JWT + RBAC, dan UI
-                                Neo-Glassmorphism.<br>
-                                <strong>Impact:</strong> Similarity score <strong>78–88%</strong>,
-                                <strong>18/18</strong> automated tests passed (100%), mendukung percakapan multi-turn
-                                dengan sitasi sumber terverifikasi — zero data ke cloud.
-                            </p>
-                            <div class="tag-container">
-                                <span class="tag">RAG Pipeline</span>
-                                <span class="tag">LLaMA 3</span>
-                                <span class="tag">Qdrant</span>
-                                <span class="tag">FastAPI</span>
-                                <span class="tag">Next.js 16</span>
-                                <span class="tag">Ollama</span>
-                                <span class="tag">JWT + RBAC</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- InvestMentor -->
-                    <div class="bento-card col-6 reveal delay-100 project-card" data-category="web ai"
-                        style="flex-direction: column-reverse;">
-                        <div class="glare"></div>
-                        <div class="bento-card-content">
-                            <span class="text-meta">Full-Stack AI · Predictive & Generative</span>
-                            <h3 class="bento-title">InvestMentor — Equity Analytics</h3>
-                            <p class="bento-desc">
-                                <strong>Problem:</strong> Investor pemula kesulitan menganalisis data deret waktu saham dan sering mengalami limitasi kuota API saat analisis real-time.<br>
-                                <strong>Solution:</strong> Platform analitik pasar modal dengan model LSTM (TensorFlow.js) untuk proyeksi harga saham harian, asisten Gemini 2.0 (3-Key pool auto-failover), dan streaming WebSocket.<br>
-                                <strong>Impact:</strong> Akurasi <strong>1.8% MAPE</strong> & <strong>64% Directional</strong> pada 700 hari data bursa, <strong>99.9% uptime</strong> tanpa error 429, serta in-memory cache 15 menit.
-                            </p>
-                            <div class="tag-container" style="margin-bottom: var(--space-md);">
-                                <span class="tag">TensorFlow.js (LSTM)</span>
-                                <span class="tag">Gemini 2.0</span>
-                                <span class="tag">WebSocket</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">MySQL</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/NabielMuhammad/investmentor" target="_blank" rel="noopener"
-                                    class="project-link-btn">
-                                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                            <div class="project-actions">
+                                <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> Profil GitHub
                                 </a>
                             </div>
                         </div>
-                        <div class="bento-image-wrapper project-gallery-trigger" style="min-height: 280px;" data-gallery-title="InvestMentor — AI Stock Platform">
-                            <img src="Foto/InvestMentor/Screenshot 2026-11-02 160126.png"
-                                alt="Dashboard Utama InvestMentor — Platform Edukasi Investasi Saham AI"
-                                class="main-project-img" loading="lazy">
+                        <div class="project-img-wrapper project-gallery-trigger" data-gallery-title="Enterprise RAG Knowledge Assistant">
+                            <img src="Foto/rag-assistant.jpg" alt="Antarmuka Chat Tanya Jawab Dokumen Enterprise RAG Assistant" class="project-img" loading="lazy">
                             <div class="gallery-badge">
-                                <i class="fa-solid fa-images" aria-hidden="true"></i>
-                                <span>Galeri (5 Foto)</span>
-                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                <span>Lihat UI Sistem</span>
                             </div>
                             <div class="gallery-sources" style="display: none;">
-                                <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160126.png" data-caption="Dashboard & Hero Utama InvestMentor — Platform Edukasi Investasi Saham AI"></div>
-                                <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160225.png" data-caption="Dashboard Prediksi Harga Saham Real-Time (BBCA, BBRI, BMRI, TLKM, UNVR)"></div>
-                                <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160155.png" data-caption="Fitur Platform — Simulasi Trading & Analisis Prediksi AI LSTM"></div>
-                                <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160247.png" data-caption="Portal Berita Pasar Modal & IHSG Terkini (Diperbarui Tiap 15 Menit)"></div>
-                                <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160640.png" data-caption="InvestMentor AI — Asisten Chatbot Interaktif Tanya Jawab Investasi Saham"></div>
+                                <div data-src="Foto/rag-assistant.jpg" data-caption="Antarmuka Percakapan Enterprise RAG — Tanya Jawab Dokumen dengan Sitasi Terverifikasi dan Guardrail Anti-Halusinasi"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bot Voucher BGA -->
-                    <div class="bento-card col-6 reveal delay-200 project-card" data-category="web"
-                        style="flex-direction: column-reverse;">
-                        <div class="glare"></div>
-                        <div class="bento-card-content">
-                            <span class="text-meta">Automation & REST API</span>
-                            <h3 class="bento-title">Bot Voucher BGA</h3>
-                            <p class="bento-desc">
-                                <strong>Problem:</strong> Distribusi voucher manual Telkomsel memakan waktu berjam-jam
-                                dan rawan human error.<br>
-                                <strong>Solution:</strong> Bot Telegram berskala produksi dengan arsitektur backend
-                                scalable, enkripsi E2E, dan manajemen webhook.<br>
-                                <strong>Impact:</strong> <strong>1.000+ transaksi/jam</strong>, berjalan <strong>10+
-                                    bulan</strong> tanpa downtime di lingkungan produksi.
-                            </p>
-                            <div class="project-links">
-                                <a href="#" class="project-link-btn" style="opacity: 0.5; pointer-events: none;">
-                                    <i class="fa-solid fa-lock" aria-hidden="true"></i> Private Repo
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bento-image-wrapper project-gallery-trigger" style="min-height: 280px;" data-gallery-title="Bot Voucher BGA — Telkomsel">
-                            <img src="Foto/botvoucher.jpg"
-                                alt="Antarmuka Bot Telegram distribusi voucher BGA yang terintegrasi dengan sistem Telkomsel"
-                                class="main-project-img" loading="lazy">
-                            <div class="gallery-badge">
-                                <i class="fa-solid fa-images" aria-hidden="true"></i>
-                                <span>Lihat Tampilan </span>
-                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
-                            </div>
-                            <div class="gallery-sources" style="display: none;">
-                                <div data-src="Foto/botvoucher.jpg" data-caption="Antarmuka & Arsitektur Bot Telegram Distribusi Voucher BGA Telkomsel (1.000+ Transaksi/Jam)"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Secondary Grid (Expense AI, InvestMentor, Bot Voucher, ParentCare, ETL) -->
+                    <div class="projects-secondary-grid">
 
-                    <!-- Expense AI — Multimodal Personal Finance Assistant -->
-                    <div class="bento-card col-12 horizontal reveal delay-100 project-card" data-category="ai web">
-                        <div class="glare"></div>
-                        <div class="bento-card-content" style="flex: 1;">
-                            <span class="text-meta">Production-Grade · Multimodal AI · Full-Stack</span>
-                            <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 36px);">Expense AI — Personal Finance</h3>
-                            <p class="bento-desc" style="margin-bottom: var(--space-md);">
-                                <strong>Problem:</strong> Pencatatan keuangan manual lambat dan melelahkan, sementara struk fisik belanja sering hilang atau memiliki format tanggal dan diskon yang beragam.<br>
-                                <strong>Solution:</strong> Asisten finansial otomatis terintegrasi Telegram Bot & Next.js 16 PWA (Supabase + Prisma). Menggunakan Gemini Vision Multimodal untuk ekstraksi struk instan, auto-normalisasi tanggal (DMY/ISO), dan komputasi presisi integer/BigInt IDR.<br>
-                                <strong>Impact:</strong> Ekstraksi struk <strong>&lt;3 detik</strong>, 5-layer webhook defense (HMAC + IP verify), dan <strong>22/22 unit tests passed (100%)</strong> tanpa distorsi desimal.
-                            </p>
-                            <div class="tag-container">
-                                <span class="tag">Gemini Vision AI</span>
-                                <span class="tag">Telegram Bot API</span>
-                                <span class="tag">Next.js 16</span>
-                                <span class="tag">TypeScript</span>
-                                <span class="tag">Prisma ORM</span>
-                                <span class="tag">Supabase</span>
-                                <span class="tag">Tailwind CSS</span>
+                        <!-- Expense AI -->
+                        <div class="project-card standard reveal project-item" data-category="ai web">
+                            <div class="project-img-wrapper project-gallery-trigger" data-gallery-title="Expense AI — Smart Personal Finance">
+                                <img src="Foto/ExpenseAI/expense-dashboard-overview.png" alt="Dashboard Expense AI Personal Finance" class="project-img" loading="lazy">
+                                <div class="gallery-badge">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                    <span>Galeri (3 Foto)</span>
+                                </div>
+                                <div class="gallery-sources" style="display: none;">
+                                    <div data-src="Foto/ExpenseAI/expense-dashboard-overview.png" data-caption="Dashboard Finansial Expense AI — Ringkasan Saldo, Budget &amp; Visualisasi Kategori"></div>
+                                    <div data-src="Foto/ExpenseAI/expense-dashboard-analytics.png" data-caption="Analitik Pengeluaran &amp; Distribusi Anggaran Bulanan"></div>
+                                    <div data-src="Foto/ExpenseAI/expense-dashboard-transactions.png" data-caption="Tabel Riwayat Transaksi Ekstraksi Struk Belanja Otomatis"></div>
+                                </div>
                             </div>
-                            <div class="project-links">
-                                <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener"
-                                    class="project-link-btn">
-                                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bento-image-wrapper project-gallery-trigger" style="flex: 1.2;" data-gallery-title="Expense AI — Smart Personal Finance Assistant">
-                            <img src="Foto/ExpenseAI/expense-dashboard-overview.png"
-                                alt="Dashboard Web Utama Expense AI — Overview Pengeluaran & Anggaran"
-                                class="main-project-img" loading="lazy">
-                            <div class="gallery-badge">
-                                <i class="fa-solid fa-images" aria-hidden="true"></i>
-                                <span>Galeri (3 Foto)</span>
-                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
-                            </div>
-                            <div class="gallery-sources" style="display: none;">
-                                <div data-src="Foto/ExpenseAI/expense-dashboard-overview.png" data-caption="Dashboard Web Utama Expense AI — Ringkasan Finansial, Progres Budget Bulanan & Kategori Pengeluaran"></div>
-                                <div data-src="Foto/ExpenseAI/expense-dashboard-analytics.png" data-caption="Halaman Analitik & Breakdown Proporsi Pengeluaran Berdasarkan Kategori"></div>
-                                <div data-src="Foto/ExpenseAI/expense-dashboard-transactions.png" data-caption="Tabel Riwayat Transaksi Terkonfirmasi Lengkap dengan Sumber Data"></div>
+                            <div class="project-card-body">
+                                <div>
+                                    <span class="project-meta">Multimodal AI · Telegram Bot + Web PWA</span>
+                                    <h3 class="project-title">Expense AI — Smart Finance</h3>
+                                    <div class="project-desc-block">
+                                        <div class="project-desc-line"><strong>Solusi:</strong> Asisten finansial otomatis dengan Gemini Vision Multimodal untuk ekstraksi struk fisik belanja dalam &lt;3 detik, dilengkapi bot Telegram dan web dashboard Next.js 16.</div>
+                                        <div class="project-desc-line"><strong>Dampak:</strong> 22/22 unit tests passed (100%), proteksi webhook 5-layer HMAC, dan presisi kalkulasi IDR tanpa error pembulatan desimal.</div>
+                                    </div>
+                                    <div class="tag-container">
+                                        <span class="tag">Gemini Vision AI</span>
+                                        <span class="tag">Telegram API</span>
+                                        <span class="tag">Next.js 16</span>
+                                        <span class="tag">Prisma ORM</span>
+                                        <span class="tag">Supabase</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ParentCare -->
-                    <div class="bento-card col-12 horizontal reveal delay-100 project-card" data-category="ai">
-                        <div class="glare"></div>
-                        <div class="bento-image-wrapper project-gallery-trigger" style="flex: 1.2;" data-gallery-title="ParentCare Analytics">
-                            <img src="Foto/Parent-Care/Screenshot 2026-11-02 155137.png"
-                                alt="Dashboard Utama ParentCare — Platform Parenting Digital"
-                                class="main-project-img" loading="lazy">
-                            <div class="gallery-badge">
-                                <i class="fa-solid fa-images" aria-hidden="true"></i>
-                                <span>Galeri (3 Foto)</span>
-                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
+                        <!-- InvestMentor -->
+                        <div class="project-card standard reveal delay-100 project-item" data-category="ai web">
+                            <div class="project-img-wrapper project-gallery-trigger" data-gallery-title="InvestMentor — Equity Analytics Platform">
+                                <img src="Foto/InvestMentor/Screenshot 2026-11-02 160126.png" alt="Platform Investasi Saham InvestMentor" class="project-img" loading="lazy">
+                                <div class="gallery-badge">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                    <span>Galeri (5 Foto)</span>
+                                </div>
+                                <div class="gallery-sources" style="display: none;">
+                                    <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160126.png" data-caption="Dashboard Utama InvestMentor — Analisis Pasar Modal &amp; Saham IHSG"></div>
+                                    <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160225.png" data-caption="Prediksi Harga Deret Waktu Menggunakan Model LSTM Real-Time"></div>
+                                    <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160155.png" data-caption="Simulasi Trading Saham Edukatif &amp; Analisis Risiko AI"></div>
+                                    <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160247.png" data-caption="Portal Berita Finansial Otomatis Diperbarui Setiap 15 Menit"></div>
+                                    <div data-src="Foto/InvestMentor/Screenshot 2026-11-02 160640.png" data-caption="Asisten Chatbot Interaktif Gemini 2.0 untuk Tanya Jawab Saham"></div>
+                                </div>
                             </div>
-                            <div class="gallery-sources" style="display: none;">
-                                <div data-src="Foto/Parent-Care/Screenshot 2026-11-02 155137.png" data-caption="Dashboard & Landing Page Utama ParentCare — Platform Parenting Digital"></div>
-                                <div data-src="Foto/Parent-Care/Screenshot 2026-11-02 155151.png" data-caption="Fitur Quiz Parent Match Interaktif — Analisis Gaya Pengasuhan AI"></div>
-                                <div data-src="Foto/Parent-Care/Screenshot 2026-11-02 155426.png" data-caption="Halaman Tim Pengembang & Machine Learning Engineers DBS Foundation Capstone"></div>
-                            </div>
-                        </div>
-                        <div class="bento-card-content" style="flex: 1;">
-                            <span class="text-meta">DBS Foundation Capstone · AI / ML</span>
-                            <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 36px);">ParentCare Analytics</h3>
-                            <p class="bento-desc" style="margin-bottom: var(--space-md);">
-                                <strong>Problem:</strong> Orang tua sering tidak menyadari pola pengasuhan mereka dan
-                                dampaknya terhadap tumbuh kembang anak.<br>
-                                <strong>Solution:</strong> Platform analisis gaya pengasuhan bertenaga AI menggunakan
-                                Random Forest Classifier untuk memprediksi metrik pengasuhan dan menghasilkan insight
-                                kustom.<br>
-                                <strong>Impact:</strong> Deployed di Vercel, konsultasi parenting digital interaktif.
-                            </p>
-                            <div class="tag-container">
-                                <span class="tag">Scikit-Learn</span>
-                                <span class="tag">Random Forest</span>
-                                <span class="tag">Vercel</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://front-parent.vercel.app/parent-match" target="_blank" rel="noopener"
-                                    class="project-link-btn">
-                                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
-                                </a>
+                            <div class="project-card-body">
+                                <div>
+                                    <span class="project-meta">Predictive AI &amp; LLM · Time-Series Forecasting</span>
+                                    <h3 class="project-title">InvestMentor — Equity Analytics</h3>
+                                    <div class="project-desc-block">
+                                        <div class="project-desc-line"><strong>Solusi:</strong> Platform analitik pasar modal dengan model LSTM (TensorFlow.js) untuk proyeksi harga saham harian, asisten interaktif Gemini 2.0 (3-key auto-failover), dan WebSocket streaming.</div>
+                                        <div class="project-desc-line"><strong>Dampak:</strong> Akurasi 1.8% MAPE pada 700 hari data historis bursa dan 99.9% uptime tanpa limit kuota API.</div>
+                                    </div>
+                                    <div class="tag-container">
+                                        <span class="tag">TensorFlow.js (LSTM)</span>
+                                        <span class="tag">Gemini 2.0</span>
+                                        <span class="tag">WebSocket</span>
+                                        <span class="tag">Node.js</span>
+                                        <span class="tag">MySQL</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/NabielMuhammad/investmentor" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Fashion Studio ETL Pipeline -->
-                    <div class="bento-card col-12 reveal delay-200 project-card" data-category="data">
-                        <div class="glare"></div>
-                        <div class="bento-card-content">
-                            <span class="text-meta">Data Engineering</span>
-                            <h3 class="bento-title">Fashion Studio ETL Pipeline</h3>
-                            <p class="bento-desc">
-                                <strong>Problem:</strong> Data produk fashion (867+ item) dari
-                                `fashion-studio.dicoding.dev` tersebar dalam HTML mentah, tidak terstruktur, dan sulit
-                                dianalisis.<br>
-                                <strong>Solution:</strong> Membangun pipeline ETL modular (Extract, Transform, Load)
-                                menggunakan Python, BeautifulSoup, dan Pandas, serta diuji penuh menggunakan `pytest`
-                                (12 test case, 100% mocked).<br>
-                                <strong>Impact:</strong> Data berhasil dibersihkan (konversi USD ke IDR, ekstraksi angka
-                                dari string) dan dimuat ke tiga tujuan sekaligus secara otomatis: CSV lokal, Google
-                                Sheets API, dan PostgreSQL.
-                            </p>
-                            <div class="tag-container">
-                                <span class="tag">Python</span>
-                                <span class="tag">Pandas</span>
-                                <span class="tag">PostgreSQL</span>
-                                <span class="tag">ETL</span>
+                        <!-- Bot Voucher BGA Telkomsel -->
+                        <div class="project-card standard reveal project-item" data-category="web">
+                            <div class="project-img-wrapper project-gallery-trigger" data-gallery-title="Bot Voucher BGA — Telkomsel">
+                                <img src="Foto/botvoucher.jpg" alt="Bot Telegram Voucher Telkomsel" class="project-img" loading="lazy">
+                                <div class="gallery-badge">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                    <span>Lihat Arsitektur</span>
+                                </div>
+                                <div class="gallery-sources" style="display: none;">
+                                    <div data-src="Foto/botvoucher.jpg" data-caption="Arsitektur &amp; Antarmuka Bot Telegram Distribusi Voucher BGA Telkomsel (1.000+ Transaksi/Jam)"></div>
+                                </div>
+                            </div>
+                            <div class="project-card-body">
+                                <div>
+                                    <span class="project-meta">Production Backend &amp; Otomatisasi API</span>
+                                    <h3 class="project-title">Bot Voucher BGA Telkomsel</h3>
+                                    <div class="project-desc-block">
+                                        <div class="project-desc-line"><strong>Solusi:</strong> Bot Telegram otomatisasi distribusi voucher fisik ke ribuan outlet mitra Telkomsel, terintegrasi langsung dengan endpoint REST API SAMOSIR.LIVE.</div>
+                                        <div class="project-desc-line"><strong>Dampak:</strong> Memproses 1.000+ tx/jam dengan enkripsi E2E, beroperasi 10+ bulan di lingkungan produksi aktif tanpa insiden fatal.</div>
+                                    </div>
+                                    <div class="tag-container">
+                                        <span class="tag">REST API</span>
+                                        <span class="tag">Telegram Bot</span>
+                                        <span class="tag">Node.js</span>
+                                        <span class="tag">E2E Encryption</span>
+                                        <span class="tag">Webhook Manager</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <span class="tag" style="color: #94a3b8;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Private Repo Telkomsel</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                        <!-- ParentCare Analytics -->
+                        <div class="project-card standard reveal delay-100 project-item" data-category="ai">
+                            <div class="project-img-wrapper project-gallery-trigger" data-gallery-title="ParentCare Analytics">
+                                <img src="Foto/Parent-Care/Screenshot 2026-11-02 155137.png" alt="Platform Parenting ParentCare" class="project-img" loading="lazy">
+                                <div class="gallery-badge">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                    <span>Galeri (3 Foto)</span>
+                                </div>
+                                <div class="gallery-sources" style="display: none;">
+                                    <div data-src="Foto/Parent-Care/Screenshot 2026-11-02 155137.png" data-caption="Dashboard &amp; Beranda ParentCare — Platform Parenting Digital Cerdas"></div>
+                                    <div data-src="Foto/Parent-Care/Screenshot 2026-11-02 155151.png" data-caption="Kuis Interaktif Parent Match — Klasifikasi Pola Asuh Bertenaga AI"></div>
+                                    <div data-src="Foto/Parent-Care/Screenshot 2026-11-02 155426.png" data-caption="Tim Pengembang Capstone DBS Foundation Coding Camp 2025"></div>
+                                </div>
+                            </div>
+                            <div class="project-card-body">
+                                <div>
+                                    <span class="project-meta">DBS Foundation Capstone · Scikit-Learn</span>
+                                    <h3 class="project-title">ParentCare Analytics</h3>
+                                    <div class="project-desc-block">
+                                        <div class="project-desc-line"><strong>Solusi:</strong> Platform evaluasi gaya pengasuhan anak menggunakan model Random Forest Classifier untuk memetakan respons kuis orang tua ke rekomendasi berbasis data psikologi anak.</div>
+                                        <div class="project-desc-line"><strong>Dampak:</strong> Diluncurkan di Vercel sebagai proyek capstone terbaik jalur Machine Learning DBS Coding Camp.</div>
+                                    </div>
+                                    <div class="tag-container">
+                                        <span class="tag">Random Forest</span>
+                                        <span class="tag">Scikit-Learn</span>
+                                        <span class="tag">FastAPI</span>
+                                        <span class="tag">Vercel</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://front-parent.vercel.app/parent-match" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg> Live Demo Vercel
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fashion Studio ETL Pipeline -->
+                        <div class="project-card standard reveal project-item" data-category="data" style="grid-column: span 2;">
+                            <div class="project-card-body" style="padding: 32px;">
+                                <div>
+                                    <span class="project-meta">Data Engineering · Automated Pipeline</span>
+                                    <h3 class="project-title">Fashion Studio ETL Pipeline</h3>
+                                    <div class="project-desc-block">
+                                        <div class="project-desc-line"><strong>Tantangan:</strong> Data katalog busana (860+ item) berserakan dalam kode HTML statis tanpa struktur database, menyulitkan analitik tren penjualan.</div>
+                                        <div class="project-desc-line"><strong>Solusi:</strong> Pipeline ETL otomatis modular (Extract via BeautifulSoup, Transform dengan Pandas untuk konversi mata uang dan standarisasi string, Load serentak ke 3 tujuan: CSV lokal, Google Sheets API, dan PostgreSQL).</div>
+                                        <div class="project-desc-line"><strong>Dampak:</strong> 12/12 pytest cases lulus (100% mocked dependencies) dengan pembersihan data terotomatisasi secara instan.</div>
+                                    </div>
+                                    <div class="tag-container">
+                                        <span class="tag">Python</span>
+                                        <span class="tag">Pandas</span>
+                                        <span class="tag">PostgreSQL</span>
+                                        <span class="tag">Google Sheets API</span>
+                                        <span class="tag">Pytest (100% Mocked)</span>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> Repositori GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ============================================
-         SKILLS SECTION
-         ============================================ -->
-        <section id="skills" class="section bg-canvas">
+             CERTIFICATIONS SECTION (Spotlight & Clean Drawer)
+             ============================================ -->
+        <section id="certifications" class="section" style="background: var(--color-bg-canvas);">
             <div class="container">
-                <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
-                    <span class="section-tag">04. Keahlian</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Tech <span
-                            class="gradient-text">Stack</span></h2>
+                <div class="section-header reveal">
+                    <span class="section-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 04. Sertifikasi Resmi</span>
+                    <h2 class="section-title">Kredensial &amp; <span class="gradient-amber-text">Sertifikasi Kompetensi</span></h2>
+                    <p class="section-subtitle">Pengakuan kompetensi profesi terverifikasi negara dari BNSP serta sertifikasi spesialisasi internasional dan nasional.</p>
                 </div>
 
-                <div class="bento-grid">
-                    <!-- AI & ML -->
-                    <div class="bento-card col-4 reveal">
-                        <div class="bento-card-content">
-                            <span class="text-meta">Domain 01</span>
-                            <h3 class="bento-title">AI & Machine Learning</h3>
-                            <div class="skill-tag-list">
-                                <span class="skill-tag"><i class="devicon-tensorflow-original" aria-hidden="true"></i>
-                                    TensorFlow</span>
-                                <span class="skill-tag"><i class="devicon-keras-plain" aria-hidden="true"></i>
-                                    Keras</span>
-                                <span class="skill-tag"><i class="devicon-scikitlearn-plain" aria-hidden="true"></i>
-                                    Scikit-learn</span>
-                                <span class="skill-tag"><i class="fa-solid fa-brain" aria-hidden="true"></i>
-                                    CNN-LSTM</span>
-                                <span class="skill-tag"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
-                                    NLP</span>
-                                <span class="skill-tag"><i class="fa-solid fa-eye" aria-hidden="true"></i> Computer
-                                    Vision</span>
-                                <span class="skill-tag"><i class="fa-solid fa-robot" aria-hidden="true"></i> LLM (Gemini
-                                    / LLaMA)</span>
-                                <span class="skill-tag"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                                    RAG Pipeline</span>
-                            </div>
+                <!-- Spotlight Tier (BNSP + Telkomsel + DBS) -->
+                <div class="cert-spotlight-grid">
+                    <!-- BNSP Card (Prominently Featured) -->
+                    <div class="cert-bnsp-card reveal">
+                        <div class="cert-badge-row">
+                            <span class="cert-national-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                                <span>Sertifikasi Negara (BNSP)</span>
+                            </span>
+                            <span class="cert-validity-badge">Berlaku s.d. Juni 2029 (3 Tahun)</span>
+                        </div>
+                        <h3 class="cert-bnsp-title">Pemrogram Web Pratama (Junior Web Programmer)</h3>
+                        <div class="cert-bnsp-issuer">Badan Nasional Sertifikasi Profesi (BNSP) &bull; LSP Teknologi Digital</div>
+                        <p class="cert-bnsp-desc">
+                            Dinyatakan <strong>Kompeten</strong> berdasarkan Standar Kompetensi Kerja Nasional Indonesia (SKKNI). Mencakup penguasaan struktur data, algoritma pemrograman, perancangan database terdistribusi, arsitektur web modern, dan standar kode bersih.
+                        </p>
+                        <div class="cert-bnsp-actions">
+                            <button class="btn btn-amber btn-sm project-gallery-trigger" data-gallery-title="Sertifikat Kompetensi BNSP — Pemrogram Web Pratama">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
+                                <span>Pratinjau Sertifikat HD</span>
+                                <div class="gallery-sources" style="display: none;">
+                                    <div data-src="Sertifikat/BNSP-preview.jpg" data-caption="Sertifikat Kompetensi Resmi Badan Nasional Sertifikasi Profesi (BNSP) — Bidang Pemrogram Web Pratama / Junior Web Programmer atas nama Nabiel Muhammad Imjauzanansyah"></div>
+                                </div>
+                            </button>
+                            <a href="Sertifikat/BNSP.pdf" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                                <span>Unduh PDF Resmi</span>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Data & Backend -->
-                    <div class="bento-card col-4 reveal delay-100">
-                        <div class="bento-card-content">
-                            <span class="text-meta">Domain 02</span>
-                            <h3 class="bento-title">Data & Backend</h3>
-                            <div class="skill-tag-list">
-                                <span class="skill-tag"><i class="devicon-python-plain" aria-hidden="true"></i>
-                                    Python</span>
-                                <span class="skill-tag"><i class="devicon-nodejs-plain" aria-hidden="true"></i>
-                                    Node.js</span>
-                                <span class="skill-tag"><i class="devicon-fastapi-plain" aria-hidden="true"></i>
-                                    FastAPI</span>
-                                <span class="skill-tag"><i class="devicon-express-original" aria-hidden="true"></i>
-                                    Express</span>
-                                <span class="skill-tag"><i class="devicon-laravel-original" aria-hidden="true"></i>
-                                    Laravel</span>
-                                <span class="skill-tag"><i class="devicon-postgresql-plain" aria-hidden="true"></i>
-                                    PostgreSQL</span>
-                                <span class="skill-tag"><i class="devicon-mysql-plain" aria-hidden="true"></i>
-                                    MySQL</span>
-                                <span class="skill-tag"><i class="fa-solid fa-cubes" aria-hidden="true"></i>
-                                    Qdrant</span>
-                                <span class="skill-tag"><i class="devicon-pandas-plain" aria-hidden="true"></i>
-                                    Pandas</span>
-                                <span class="skill-tag"><i class="devicon-numpy-plain" aria-hidden="true"></i>
-                                    NumPy</span>
-                                <span class="skill-tag"><i class="fa-solid fa-database" aria-hidden="true"></i> ETL
-                                    Pipelines</span>
+                    <!-- Telkomsel & DBS Spotlights -->
+                    <div class="cert-pair-column">
+                        <div class="cert-card-sub reveal delay-100">
+                            <div class="cert-icon-box">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#38bdf8" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            </div>
+                            <div class="cert-card-sub-info">
+                                <span class="cert-sub-name">Software Developer Intern &amp; Evaluasi Mentor</span>
+                                <span class="cert-sub-issuer">PT Telekomunikasi Selular (Telkomsel) &bull; 2025</span>
+                                <a href="Sertifikat/Sertifikat Telkomsel.pdf" target="_blank" rel="noopener" class="cert-sub-link">
+                                    Lihat Evaluasi <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Tools & Platforms -->
-                    <div class="bento-card col-4 reveal delay-200">
-                        <div class="bento-card-content">
-                            <span class="text-meta">Domain 03</span>
-                            <h3 class="bento-title">Tools & Platforms</h3>
-                            <div class="skill-tag-list">
-                                <span class="skill-tag"><i class="devicon-git-plain" aria-hidden="true"></i> Git</span>
-                                <span class="skill-tag"><i class="devicon-github-original" aria-hidden="true"></i>
-                                    GitHub</span>
-                                <span class="skill-tag"><i class="devicon-docker-plain" aria-hidden="true"></i>
-                                    Docker</span>
-                                <span class="skill-tag"><i class="devicon-vscode-plain" aria-hidden="true"></i> VS
-                                    Code</span>
-                                <span class="skill-tag"><i class="devicon-vercel-original" aria-hidden="true"></i>
-                                    Vercel</span>
-                                <span class="skill-tag"><i class="devicon-react-original" aria-hidden="true"></i>
-                                    React.js</span>
-                                <span class="skill-tag"><i class="devicon-figma-plain" aria-hidden="true"></i>
-                                    Figma</span>
-                                <span class="skill-tag"><i class="fa-solid fa-microchip" aria-hidden="true"></i>
-                                    Ollama</span>
-                                <span class="skill-tag"><i class="devicon-linux-plain" aria-hidden="true"></i>
-                                    Linux</span>
+                        <div class="cert-card-sub reveal delay-200">
+                            <div class="cert-icon-box" style="background: rgba(129, 140, 248, 0.1); border-color: rgba(129, 140, 248, 0.2); color: #818cf8;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Currently Learning -->
-                    <div class="bento-card col-12 reveal delay-300">
-                        <div class="bento-card-content currently-learning">
-                            <span class="text-meta"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Sedang
-                                Dipelajari</span>
-                            <div class="skill-tag-list" style="margin-top: var(--space-md);">
-                                <span class="skill-tag">🤖 CrewAI & Multi-Agent Systems</span>
-                                <span class="skill-tag">🧠 Fine-Tuning & Model Optimization</span>
-                                <span class="skill-tag">☁️ Google Cloud ML</span>
-                                <span class="skill-tag">🐳 Kubernetes & MLOps</span>
+                            <div class="cert-card-sub-info">
+                                <span class="cert-sub-name">Machine Learning Engineering — Coding Camp</span>
+                                <span class="cert-sub-issuer">DBS Foundation × Dicoding &bull; 2025</span>
+                                <a href="Sertifikat/[Coding Camp 2025] Certificate - MC384D5Y0993.pdf" target="_blank" rel="noopener" class="cert-sub-link" style="color: #818cf8;">
+                                    Lihat Sertifikat <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Collapsible Accordion Drawer (15 Dicoding Course Certifications) -->
+                <div class="cert-drawer-card reveal" id="cert-accordion">
+                    <div class="cert-drawer-header" id="cert-toggle-btn" role="button" aria-expanded="false" tabindex="0">
+                        <div class="cert-drawer-title-group">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            <h3 class="cert-drawer-title">Sertifikat Kursus &amp; Spesialisasi Akademi (Dicoding)</h3>
+                            <span class="cert-drawer-count">15 Sertifikat</span>
+                        </div>
+                        <svg class="cert-drawer-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+
+                    <div class="cert-drawer-content" id="cert-drawer-body">
+                        <div class="cert-drawer-inner">
+                            <div class="cert-compact-grid">
+                            <a href="Sertifikat/sertifikat_course_319_3903933_070625111059.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Machine Learning Terapan</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Jun 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_708_3903933_140525113107.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Fundamental Pemrosesan Data</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Mei 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_185_3903933_060525133438.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Fundamental Deep Learning</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Mei 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_852_3903933_260425201237.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Financial Literacy 101</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Apr 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_184_3903933_110425211230.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Machine Learning untuk Pemula</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Apr 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_555_3903933_280225100346.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Fundamental Analisis Data</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_86_3903933_250225094118 - Copy.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Memulai Pemrograman dengan Python</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_177_3903933_190225110534.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Dasar Visualisasi Data</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_600_3903933_190225000307.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Dasar SQL (Structured Query)</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_653_3903933_160225125548.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Belajar Dasar AI (Artificial Intelligence)</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_317_3903933_130225101904.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Dasar Git dengan GitHub</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_237_3903933_110225145512.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Dasar Pemrograman Software</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_302_3903933_110225113431.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Logika Pemrograman 101</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Feb 2025</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_315_3903933_270424204048.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Front-End Web untuk Pemula</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Apr 2024</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+
+                            <a href="Sertifikat/sertifikat_course_261_3903933_170424163328.pdf" target="_blank" rel="noopener" class="cert-compact-item">
+                                <div>
+                                    <div class="cert-compact-text">Back-End Pemula dengan JavaScript</div>
+                                    <span class="cert-compact-date">Dicoding &bull; Apr 2024</span>
+                                </div>
+                                <svg class="cert-compact-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- ============================================
-         CERTIFICATIONS SECTION
-         ============================================ -->
-        <section id="certifications" class="section bg-paper">
+             SKILLS SECTION
+             ============================================ -->
+        <section id="skills" class="section">
             <div class="container">
-                <div class="section-header reveal" style="margin-bottom: var(--space-xl);">
-                    <span class="section-tag">05. Sertifikasi</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Sertifikasi <span
-                            class="gradient-text">Profesional</span></h2>
+                <div class="section-header reveal">
+                    <span class="section-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> 05. Keahlian</span>
+                    <h2 class="section-title">Tech Stack &amp; <span class="gradient-text">Kapabilitas Teknis</span></h2>
+                    <p class="section-subtitle">Alat, framework, dan teknologi yang saya gunakan sehari-hari untuk merancang sistem cerdas.</p>
                 </div>
 
-                <div class="cert-grid reveal">
-                    <a href="Sertifikat/Sertifikat Telkomsel.pdf" target="_blank" class="cert-card"
-                        style="border-color: rgba(6,182,212,0.3); background: rgba(6,182,212,0.02);">
-                        <i class="fa-solid fa-star cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Software Developer Intern + Evaluasi</span>
-                            <span class="cert-issuer">Telkomsel</span>
-                            <span class="cert-date">September 2025</span>
+                <div class="skills-grid">
+                    <!-- Domain 1: AI & ML -->
+                    <div class="skill-domain-card reveal">
+                        <span class="skill-domain-meta">Spesialisasi 01</span>
+                        <h3 class="skill-domain-title">AI &amp; Machine Learning</h3>
+                        <div class="skill-pills-list">
+                            <span class="skill-pill"><i class="devicon-tensorflow-original"></i> TensorFlow</span>
+                            <span class="skill-pill"><i class="devicon-keras-plain"></i> Keras</span>
+                            <span class="skill-pill"><i class="devicon-scikitlearn-plain"></i> Scikit-Learn</span>
+                            <span class="skill-pill"><i class="fa-solid fa-brain"></i> CNN-LSTM</span>
+                            <span class="skill-pill"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+                            <span class="skill-pill"><i class="fa-solid fa-comments"></i> NLP &amp; LLM</span>
+                            <span class="skill-pill"><i class="fa-solid fa-magnifying-glass"></i> RAG Pipeline</span>
+                            <span class="skill-pill"><i class="fa-solid fa-cubes"></i> Qdrant Vector DB</span>
+                            <span class="skill-pill"><i class="fa-solid fa-microchip"></i> MediaPipe</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="Sertifikat/BNSP.pdf" target="_blank" class="cert-card"
-                        style="border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.02);">
-                        <i class="fa-solid fa-shield-halved cert-icon" style="color: #f59e0b;" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Pemrogram Web Pratama (Junior Web Programmer)</span>
-                            <span class="cert-issuer">BNSP — Badan Nasional Sertifikasi Profesi</span>
-                            <span class="cert-date">Juni 2026 · Berlaku 3 Tahun</span>
+                    <!-- Domain 2: Backend & Data -->
+                    <div class="skill-domain-card reveal delay-100">
+                        <span class="skill-domain-meta">Spesialisasi 02</span>
+                        <h3 class="skill-domain-title">Backend &amp; Data Engineering</h3>
+                        <div class="skill-pills-list">
+                            <span class="skill-pill"><i class="devicon-python-plain"></i> Python</span>
+                            <span class="skill-pill"><i class="devicon-fastapi-plain"></i> FastAPI</span>
+                            <span class="skill-pill"><i class="devicon-nodejs-plain"></i> Node.js</span>
+                            <span class="skill-pill"><i class="devicon-express-original"></i> Express.js</span>
+                            <span class="skill-pill"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                            <span class="skill-pill"><i class="devicon-mysql-plain"></i> MySQL</span>
+                            <span class="skill-pill"><i class="devicon-pandas-plain"></i> Pandas</span>
+                            <span class="skill-pill"><i class="devicon-numpy-plain"></i> NumPy</span>
+                            <span class="skill-pill"><i class="fa-solid fa-database"></i> ETL Pipelines</span>
+                            <span class="skill-pill"><i class="fa-solid fa-network-wired"></i> REST API &amp; WebSockets</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="Sertifikat/[Coding Camp 2025] Certificate - MC384D5Y0993.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-award cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">ML Engineering — Coding Camp 2025</span>
-                            <span class="cert-issuer">DBS Foundation × Dicoding</span>
-                            <span class="cert-date">2025</span>
+                    <!-- Domain 3: Tools & Platforms -->
+                    <div class="skill-domain-card reveal delay-200">
+                        <span class="skill-domain-meta">Spesialisasi 03</span>
+                        <h3 class="skill-domain-title">Tools &amp; Ekosistem</h3>
+                        <div class="skill-pills-list">
+                            <span class="skill-pill"><i class="devicon-git-plain"></i> Git &amp; GitHub</span>
+                            <span class="skill-pill"><i class="devicon-docker-plain"></i> Docker</span>
+                            <span class="skill-pill"><i class="devicon-linux-plain"></i> Linux CLI</span>
+                            <span class="skill-pill"><i class="devicon-react-original"></i> React.js / Next.js</span>
+                            <span class="skill-pill"><i class="devicon-vscode-plain"></i> VS Code</span>
+                            <span class="skill-pill"><i class="devicon-vercel-original"></i> Vercel</span>
+                            <span class="skill-pill"><i class="fa-solid fa-bolt"></i> Supabase / Prisma</span>
+                            <span class="skill-pill"><i class="fa-solid fa-robot"></i> Ollama Local LLMs</span>
+                            <span class="skill-pill"><i class="devicon-figma-plain"></i> Figma</span>
                         </div>
-                    </a>
+                    </div>
+                </div>
 
-                    <a href="Sertifikat/sertifikat_course_319_3903933_070625111059.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Machine Learning Terapan</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Juni 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_708_3903933_140525113107.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Fundamental Pemrosesan Data</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Mei 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_185_3903933_060525133438.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Fundamental Deep Learning</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Mei 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_852_3903933_260425201237.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Financial Literacy 101</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">April 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_184_3903933_110425211230.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Machine Learning untuk Pemula</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">April 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_555_3903933_280225100346.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Fundamental Analisis Data</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_86_3903933_250225094118 - Copy.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Memulai Pemrograman dengan Python</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_177_3903933_190225110534.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Dasar Visualisasi Data</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_600_3903933_190225000307.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Dasar Structured Query Language (SQL)</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_653_3903933_160225125548.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Dasar AI</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_317_3903933_130225101904.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Dasar Git dengan GitHub</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_237_3903933_110225145512.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Memulai Dasar Pemrograman untuk Pengembang Software</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_302_3903933_110225113431.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Pengenalan ke Logika Pemrograman (Programming Logic 101)</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">Februari 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_315_3903933_270424204048.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Membuat Front-End Web untuk Pemula</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">April 2024</span>
-                        </div>
-                    </a>
-
-                    <a href="Sertifikat/sertifikat_course_261_3903933_170424163328.pdf" target="_blank"
-                        class="cert-card">
-                        <i class="fa-solid fa-certificate cert-icon" aria-hidden="true"></i>
-                        <div>
-                            <span class="cert-name">Belajar Back-End Pemula dengan JavaScript</span>
-                            <span class="cert-issuer">Dicoding Indonesia</span>
-                            <span class="cert-date">April 2024</span>
-                        </div>
-                    </a>
+                <!-- Learning Banner -->
+                <div class="learning-banner reveal">
+                    <div class="learning-lead">
+                        <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                        <span>Fokus Riset &amp; Eksplorasi Saat Ini:</span>
+                    </div>
+                    <div class="learning-tags">
+                        <span class="skill-pill">🤖 CrewAI &amp; Multi-Agent Systems</span>
+                        <span class="skill-pill">🧠 Fine-Tuning &amp; Model Quantization</span>
+                        <span class="skill-pill">☁️ Google Cloud MLOps &amp; Kubernetes</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ============================================
-         CONTACT SECTION
-         ============================================ -->
-        <section id="contact" class="section contact-section">
-            <div class="container" style="text-align: center; max-width: 700px;">
-                <div class="reveal">
-                    <span class="section-tag">06. Kontak</span>
+             CONTACT SECTION
+             ============================================ -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-card reveal">
+                    <span class="section-tag" style="margin-bottom: 20px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> 06. Kontak</span>
                     <h2 class="contact-title">Mari <span class="gradient-text">Terhubung</span></h2>
                     <p class="contact-subtitle">
-                        Saya terbuka untuk peluang baru di bidang AI/ML Engineering, Software Development, atau Data
-                        Engineering. Jangan ragu untuk menghubungi saya!
+                        Saya selalu terbuka untuk diskusi proyek, tawaran pekerjaan full-time (remote atau onsite), kolaborasi riset, maupun peluang engineering lainnya.
                     </p>
 
-                    <a href="mailto:nabiel.zmuhammad11@gmail.com" class="contact-email">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        nabiel.zmuhammad11@gmail.com
+                    <a href="mailto:nabiel.zmuhammad11@gmail.com" class="contact-email-btn" title="Kirim Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>nabiel.zmuhammad11@gmail.com</span>
                     </a>
 
-                    <div class="contact-cta-row">
-                        <a href="mailto:nabiel.zmuhammad11@gmail.com" class="btn btn-primary dark-btn-primary"
-                            style="font-size: 18px; padding: 18px 36px;">
-                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Hubungi Saya
+                    <div class="contact-social-row">
+                        <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub" title="GitHub">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                         </a>
-                    </div>
-
-                    <div class="contact-socials">
-                        <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener"
-                            class="social-icon-link" aria-label="GitHub">
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn" title="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
-                        <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank" rel="noopener"
-                            class="social-icon-link" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="mailto:nabiel.zmuhammad11@gmail.com" class="social-icon-link" aria-label="Email">
-                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:nabiel.zmuhammad11@gmail.com" class="social-icon-btn" aria-label="Email" title="Email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                         </a>
                     </div>
                 </div>
@@ -1022,21 +959,57 @@ nabiel.build_future()</code></pre>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p class="text-meta" style="margin-bottom: var(--space-sm);">
-            <a href="https://github.com/NabielMuhammad" target="_blank"
-                style="margin: 0 var(--space-sm); color: var(--color-gray-dark);">GitHub</a>
-            <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank"
-                style="margin: 0 var(--space-sm); color: var(--color-gray-dark);">LinkedIn</a>
-            <a href="mailto:nabiel.zmuhammad11@gmail.com"
-                style="margin: 0 var(--space-sm); color: var(--color-gray-dark);">Email</a>
-        </p>
-        <p class="bento-desc" style="font-size: 14px;">&copy; 2026 Nabiel Muhammad. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/nabiel-muhammad" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:nabiel.zmuhammad11@gmail.com">Email</a>
+                <a href="Sertifikat/BNSP.pdf" target="_blank">Sertifikasi BNSP</a>
+            </div>
+            <p class="footer-text">&copy; 2026 Nabiel Muhammad Imjauzanansyah. Dirancang dengan prinsip kode bersih &amp; modern web standards.</p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Kembali ke atas">
-        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
 
+    <!-- Fullscreen Image Lightbox Modal -->
+    <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="lightbox-header">
+            <div class="lightbox-title-box">
+                <h4 class="lightbox-project-title">Pratinjau Gambar</h4>
+                <span class="lightbox-counter">1 / 1</span>
+            </div>
+            <div class="lightbox-actions">
+                <a href="#" target="_blank" class="lightbox-btn" id="lightbox-raw-link" title="Buka Gambar Resolusi Penuh di Tab Baru">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <button class="lightbox-btn lightbox-close" aria-label="Tutup Pratinjau">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+        <div class="lightbox-stage">
+            <button class="lightbox-nav prev" aria-label="Sebelumnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="lightbox-img-wrapper">
+                <img src="" alt="" class="lightbox-img">
+            </div>
+            <button class="lightbox-nav next" aria-label="Berikutnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+        <div class="lightbox-footer">
+            <p class="lightbox-caption"></p>
+            <div class="lightbox-thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- Scripts: Framer Motion Engine & Application Logic -->
+    <script src="motion.js"></script>
     <script src="script.js"></script>
 </body>
 

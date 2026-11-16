@@ -1,250 +1,371 @@
-/* ============================================
-   PORTFOLIO — JAVASCRIPT
-   ============================================ */
+/* ==========================================================================
+   NABIEEL MUHAMMAD — PORTFOLIO JAVASCRIPT
+   Powered by Framer Motion / Motion DOM Engine & Vanilla Modern JS
+   ========================================================================== */
+
+document.documentElement.classList.add('js');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.addEventListener('DOMContentLoaded', () => {
-    initScrollReveal();
-    initSmoothScroll();
-    if (!prefersReducedMotion) {
-        initParticles();
-        initTiltEffect();
-        initMagneticHover();
-    }
+    initMotionScrollProgress();
+    initMotionScrollReveal();
+    initMotionSpringHover();
+    initNavbarScrollspy();
+    initSmoothNavigation();
     initTypingEffect();
-    initProjectFilter();
-    initGalleryModal();
+    initCodeWindowCopy();
+    initProjectFiltering();
+    initCertificationsAccordion();
+    initImageLightbox();
     initBackToTop();
 });
 
 /* ============================================
-   PARTICLE BACKGROUND
+   1. FRAMER MOTION: SCROLL PROGRESS BAR
    ============================================ */
-function initParticles() {
-    const canvas = document.getElementById('particle-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
-    
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = document.getElementById('hero').offsetHeight || window.innerHeight;
+function initMotionScrollProgress() {
+    const progressBar = document.getElementById('scroll-progress-bar');
+    if (!progressBar) return;
+
+    if (window.Motion && typeof window.Motion.scroll === 'function') {
+        window.Motion.scroll((progress) => {
+            progressBar.style.transform = `scaleX(${progress})`;
+        });
+    } else {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+            progressBar.style.transform = `scaleX(${progress})`;
+        }, { passive: true });
     }
-    
-    window.addEventListener('resize', resize);
-    resize();
-    
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 1;
-            this.color = Math.random() > 0.5 ? 'rgba(124, 58, 237, 0.4)' : 'rgba(6, 182, 212, 0.4)';
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > width) this.vx = -this.vx;
-            if (this.y < 0 || this.y > height) this.vy = -this.vy;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-        }
+}
+
+/* ============================================
+   2. FRAMER MOTION: STAGGERED SPRING SCROLL REVEALS
+   ============================================ */
+function initMotionScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal');
+    if (!revealElements.length) return;
+
+    if (prefersReducedMotion) {
+        revealElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+        return;
     }
-    
-    const particleCount = Math.min(Math.floor(window.innerWidth / 15), 100);
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-    
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        particles.forEach(p => { p.update(); p.draw(); });
-        
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    const opacity = 1 - (dist / 150);
-                    ctx.strokeStyle = `rgba(124, 58, 237, ${opacity * 0.15})`;
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
+
+    if (window.Motion && typeof window.Motion.inView === 'function' && typeof window.Motion.animate === 'function') {
+        window.Motion.inView('.reveal', (element) => {
+            let delay = 0;
+            if (element.classList.contains('delay-100')) delay = 0.1;
+            else if (element.classList.contains('delay-200')) delay = 0.2;
+            else if (element.classList.contains('delay-300')) delay = 0.3;
+
+            window.Motion.animate(element, {
+                opacity: [0, 1],
+                transform: ['translateY(24px)', 'translateY(0px)']
+            }, {
+                duration: 0.6,
+                delay: delay,
+                easing: [0.16, 1, 0.3, 1] // Apple / Framer spring curve
+            });
+        }, { margin: '0px 0px -40px 0px' });
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
                 }
-            }
-        }
-        requestAnimationFrame(animate);
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            observer.observe(el);
+        });
     }
-    animate();
 }
 
 /* ============================================
-   TYPING EFFECT
+   3. FRAMER MOTION: SPRING HOVER & PRESS GESTURES
    ============================================ */
-function initTypingEffect() {
-    const roles = ["AI/ML Engineer", "Software Developer", "Data Enthusiast"];
-    const typeTarget = document.querySelector('.typed-text');
-    if (!typeTarget) return;
+function initMotionSpringHover() {
+    if (prefersReducedMotion || window.matchMedia('(pointer: coarse)').matches) return;
+    if (!window.Motion || typeof window.Motion.animate !== 'function') return;
 
-    if (prefersReducedMotion) { typeTarget.textContent = roles[0]; return; }
-    
-    let roleIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 100;
-    
-    function type() {
-        const currentRole = roles[roleIndex];
-        if (isDeleting) {
-            typeTarget.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 50;
-        } else {
-            typeTarget.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-            typingSpeed = 150;
-        }
-        
-        if (!isDeleting && charIndex === currentRole.length) {
-            isDeleting = true;
-            typingSpeed = 2000;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            typingSpeed = 500;
-        }
-        setTimeout(type, typingSpeed);
-    }
-    setTimeout(type, 1500);
-}
-
-/* ============================================
-   SCROLL REVEAL ANIMATIONS
-   ============================================ */
-function initScrollReveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    reveals.forEach(el => observer.observe(el));
-    
-    // Immediately reveal elements already in viewport
-    setTimeout(() => {
-        reveals.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight) {
-                el.classList.add('active');
-                observer.unobserve(el);
-            }
-        });
-    }, 100);
-}
-
-/* ============================================
-   SMOOTH SCROLL
-   ============================================ */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') { e.preventDefault(); return; }
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-}
-
-/* ============================================
-   DYNAMIC GLARE (HD CRISP — NO BLUR TILT)
-   ============================================ */
-function initTiltEffect() {
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-    const cards = document.querySelectorAll('.bento-card');
-
-    cards.forEach(card => {
-        const glare = card.querySelector('.glare');
-
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            if (glare) {
-                const glareX = (x / rect.width) * 100;
-                const glareY = (y / rect.height) * 100;
-                glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.12), transparent 60%)`;
-            }
+    // Interactive spring cards (lift with subtle spring physics)
+    const springCards = document.querySelectorAll('.project-card, .exp-card, .cert-bnsp-card, .skill-domain-card');
+    springCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            window.Motion.animate(card, {
+                transform: 'translateY(-5px)'
+            }, { duration: 0.3, easing: [0.34, 1.56, 0.64, 1] });
         });
 
         card.addEventListener('mouseleave', () => {
-            if (glare) {
-                glare.style.background = `radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 60%)`;
+            window.Motion.animate(card, {
+                transform: 'translateY(0px)'
+            }, { duration: 0.25, easing: [0.16, 1, 0.3, 1] });
+        });
+    });
+
+    // Spring button presses (subtle scale squeeze and release)
+    const interactiveButtons = document.querySelectorAll('.btn, .filter-btn, .social-icon-btn, .code-copy-btn');
+    interactiveButtons.forEach(btn => {
+        btn.addEventListener('mousedown', () => {
+            window.Motion.animate(btn, {
+                transform: 'scale(0.95)'
+            }, { duration: 0.1 });
+        });
+
+        const resetScale = () => {
+            window.Motion.animate(btn, {
+                transform: 'scale(1)'
+            }, { duration: 0.25, easing: [0.34, 1.56, 0.64, 1] });
+        };
+
+        btn.addEventListener('mouseup', resetScale);
+        btn.addEventListener('mouseleave', resetScale);
+    });
+}
+
+/* ============================================
+   4. CODE SNIPPET ONE-CLICK COPY
+   ============================================ */
+async function copyToClipboard(text) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        try {
+            await navigator.clipboard.writeText(text);
+            return true;
+        } catch (err) {
+            // Fall through to fallback
+        }
+    }
+
+    try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const successful = document.execCommand('copy');
+        textArea.remove();
+        return successful;
+    } catch (e) {
+        return false;
+    }
+}
+
+function initCodeWindowCopy() {
+    const copyBtn = document.getElementById('code-copy-btn');
+    if (!copyBtn) return;
+
+    const cleanPythonCode = `class NabielMuhammad:
+    def __init__(self):
+        self.role = "AI/ML & Software Engineer"
+        self.origin = "Banda Aceh, Indonesia"
+        self.education = "S1 Sistem Informasi (GPA 3.66)"
+        self.stack = ["Python", "TensorFlow", "FastAPI", "RAG"]
+
+    def build_impact(self):
+        return "Transforming AI research into production"
+
+me = NabielMuhammad()
+print(me.build_impact())`;
+
+    let resetTimer = null;
+
+    copyBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const success = await copyToClipboard(cleanPythonCode);
+        if (success || true) {
+            copyBtn.classList.add('copied');
+            const copyIcon = copyBtn.querySelector('.copy-icon');
+            const checkIcon = copyBtn.querySelector('.check-icon');
+            const label = copyBtn.querySelector('.copy-label');
+
+            if (copyIcon) copyIcon.style.display = 'none';
+            if (checkIcon) checkIcon.style.display = 'inline-block';
+            if (label) label.textContent = 'Copied!';
+
+            // Framer Motion spring pop on success
+            if (window.Motion && typeof window.Motion.animate === 'function' && !prefersReducedMotion) {
+                window.Motion.animate(copyBtn, {
+                    transform: ['scale(1)', 'scale(1.1)', 'scale(1)']
+                }, { duration: 0.3, easing: [0.34, 1.56, 0.64, 1] });
+            }
+
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                if (copyIcon) copyIcon.style.display = 'inline-block';
+                if (checkIcon) checkIcon.style.display = 'none';
+                if (label) label.textContent = 'Copy';
+            }, 2200);
+        }
+    });
+}
+
+/* ============================================
+   5. NAVBAR SCROLLSPY & SMOOTH SCROLL
+   ============================================ */
+function initNavbarScrollspy() {
+    const navLinks = document.querySelectorAll('.pill-nav .pill-link');
+    const sections = Array.from(document.querySelectorAll('section[id], header[id]'));
+
+    function setActiveLink(currentSectionId) {
+        if (!currentSectionId) return;
+        navLinks.forEach(link => {
+            const target = link.getAttribute('href').replace('#', '');
+            const isActive = target === currentSectionId;
+            link.classList.toggle('active', isActive);
+            if (isActive) {
+                // Ensure active link is visible in scrollable pill nav on mobile
+                const container = link.closest('.pill-nav');
+                if (container && container.scrollWidth > container.clientWidth) {
+                    const linkLeft = link.offsetLeft;
+                    const linkWidth = link.offsetWidth;
+                    const containerWidth = container.clientWidth;
+                    const targetScroll = linkLeft - (containerWidth / 2) + (linkWidth / 2);
+                    container.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                }
+            }
+        });
+    }
+
+    function updateActiveNav() {
+        const isBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
+        if (isBottom) {
+            setActiveLink('contact');
+            return;
+        }
+
+        let currentSectionId = 'hero';
+        const viewportCheckLine = 180;
+
+        for (const section of sections) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= viewportCheckLine && rect.bottom > viewportCheckLine) {
+                currentSectionId = section.getAttribute('id');
+                break;
+            }
+        }
+
+        setActiveLink(currentSectionId);
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+}
+
+function initSmoothNavigation() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                    block: 'start'
+                });
             }
         });
     });
 }
 
-/* Custom Cursor removed */
-
 /* ============================================
-   MAGNETIC HOVER
+   6. HERO TYPING EFFECT
    ============================================ */
-function initMagneticHover() {
-    const magnetics = document.querySelectorAll('.pill-link, .btn, .filter-btn, .social-icon-link');
-    
-    magnetics.forEach(el => {
-        el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            el.style.transform = `translate(0px, 0px)`;
-            el.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-            setTimeout(() => { el.style.transition = ''; }, 400);
-        });
-    });
+function initTypingEffect() {
+    const typeTarget = document.querySelector('.typed-text');
+    if (!typeTarget) return;
+
+    const roles = [
+        "Applied Machine Learning",
+        "Software Engineering",
+        "Computer Vision & CNN-LSTM",
+        "Enterprise RAG & Backend"
+    ];
+
+    if (prefersReducedMotion) {
+        typeTarget.textContent = roles[0];
+        return;
+    }
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 90;
+
+    function tick() {
+        const currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+            typeTarget.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 45;
+        } else {
+            typeTarget.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            isDeleting = true;
+            typingSpeed = 2200;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typingSpeed = 380;
+        }
+
+        setTimeout(tick, typingSpeed);
+    }
+
+    setTimeout(tick, 800);
 }
 
 /* ============================================
-   PROJECT FILTER
+   7. PROJECT FILTERING (WITH FRAMER MOTION)
    ============================================ */
-function initProjectFilter() {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.project-card');
-    if (!buttons.length || !cards.length) return;
+function initProjectFiltering() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    if (!filterButtons.length || !projectItems.length) return;
 
-    buttons.forEach(btn => {
+    filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
+            filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            const filter = btn.dataset.filter;
 
-            cards.forEach(card => {
-                const matches = filter === 'all' || card.dataset.category.includes(filter);
-                card.classList.toggle('hidden', !matches);
+            const filterValue = btn.dataset.filter;
+
+            projectItems.forEach(card => {
+                const category = card.dataset.category || '';
+                const matches = filterValue === 'all' || category.split(' ').includes(filterValue);
+
                 if (matches) {
-                    card.classList.add('reveal', 'active');
+                    card.classList.remove('hidden');
+                    if (window.Motion && typeof window.Motion.animate === 'function' && !prefersReducedMotion) {
+                        window.Motion.animate(card, {
+                            opacity: [0, 1],
+                            transform: ['scale(0.96) translateY(12px)', 'scale(1) translateY(0px)']
+                        }, { duration: 0.35, easing: [0.16, 1, 0.3, 1] });
+                    }
+                } else {
+                    card.classList.add('hidden');
                 }
             });
         });
@@ -252,59 +373,57 @@ function initProjectFilter() {
 }
 
 /* ============================================
-   BACK TO TOP
+   8. CERTIFICATIONS ACCORDION DRAWER
    ============================================ */
-function initBackToTop() {
-    const btn = document.getElementById('back-to-top');
-    if (!btn) return;
-    window.addEventListener('scroll', () => { btn.classList.toggle('visible', window.scrollY > 600); });
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+function initCertificationsAccordion() {
+    const card = document.getElementById('cert-accordion');
+    const toggleBtn = document.getElementById('cert-toggle-btn');
+    if (!card || !toggleBtn) return;
+
+    const chevron = card.querySelector('.cert-drawer-chevron');
+
+    const toggleAccordion = () => {
+        const isOpen = card.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+        // Framer Motion spring rotation on chevron
+        if (chevron && window.Motion && typeof window.Motion.animate === 'function' && !prefersReducedMotion) {
+            window.Motion.animate(chevron, {
+                transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
+            }, { duration: 0.35, easing: [0.34, 1.56, 0.64, 1] });
+        }
+
+        // Stagger entrance on items when expanded
+        if (isOpen && window.Motion && typeof window.Motion.animate === 'function' && !prefersReducedMotion) {
+            const items = card.querySelectorAll('.cert-compact-item');
+            items.forEach((item, idx) => {
+                window.Motion.animate(item, {
+                    opacity: [0, 1],
+                    transform: ['translateY(8px)', 'translateY(0px)']
+                }, {
+                    duration: 0.25,
+                    delay: 0.04 + idx * 0.02,
+                    easing: [0.16, 1, 0.3, 1]
+                });
+            });
+        }
+    };
+
+    toggleBtn.addEventListener('click', toggleAccordion);
+    toggleBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleAccordion();
+        }
     });
 }
 
 /* ============================================
-   FULLSCREEN HD PROJECT GALLERY MODAL & SLIDER
+   9. FULLSCREEN HD IMAGE LIGHTBOX & SLIDER
    ============================================ */
-function initGalleryModal() {
-    let modal = document.getElementById('image-lightbox');
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'image-lightbox';
-        modal.className = 'image-lightbox';
-        modal.innerHTML = `
-            <div class="lightbox-header">
-                <div class="lightbox-title-box">
-                    <h4 class="lightbox-project-title">Galeri Proyek</h4>
-                    <span class="lightbox-counter">1 / 1</span>
-                </div>
-                <div class="lightbox-actions">
-                    <a href="#" target="_blank" class="lightbox-btn" id="lightbox-raw-link" title="Buka Gambar Resolusi Penuh di Tab Baru">
-                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                    </a>
-                    <button class="lightbox-btn lightbox-close" aria-label="Tutup Galeri">
-                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="lightbox-stage">
-                <button class="lightbox-nav prev" aria-label="Foto sebelumnya">
-                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
-                <div class="lightbox-img-wrapper">
-                    <img src="" alt="" class="lightbox-img">
-                </div>
-                <button class="lightbox-nav next" aria-label="Foto berikutnya">
-                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="lightbox-footer">
-                <p class="lightbox-caption"></p>
-                <div class="lightbox-thumbnails"></div>
-            </div>
-        `;
-        document.body.appendChild(modal);
-    }
+function initImageLightbox() {
+    const modal = document.getElementById('image-lightbox');
+    if (!modal) return;
 
     const titleEl = modal.querySelector('.lightbox-project-title');
     const counterEl = modal.querySelector('.lightbox-counter');
@@ -318,6 +437,7 @@ function initGalleryModal() {
 
     let currentItems = [];
     let currentIndex = 0;
+    let previousActiveElement = null;
 
     function renderSlide(index) {
         if (!currentItems.length) return;
@@ -326,40 +446,43 @@ function initGalleryModal() {
         currentIndex = index;
 
         const item = currentItems[currentIndex];
+
         imgEl.style.opacity = '0';
         setTimeout(() => {
             imgEl.src = item.src;
-            imgEl.alt = item.caption || '';
+            imgEl.alt = item.caption || titleEl.textContent;
             imgEl.style.opacity = '1';
-        }, 120);
+            if (window.Motion && typeof window.Motion.animate === 'function' && !prefersReducedMotion) {
+                window.Motion.animate(imgEl, {
+                    opacity: [0, 1],
+                    transform: ['scale(0.96)', 'scale(1)']
+                }, { duration: 0.25, easing: [0.16, 1, 0.3, 1] });
+            }
+        }, 80);
 
-        rawLink.href = item.src;
-        captionEl.textContent = item.caption || '';
-        counterEl.textContent = `${currentIndex + 1} / ${currentItems.length}`;
+        if (rawLink) rawLink.href = item.src;
+        if (captionEl) captionEl.textContent = item.caption || '';
+        if (counterEl) counterEl.textContent = `${currentIndex + 1} / ${currentItems.length}`;
 
-        // Update thumbnails active state
-        const allThumbs = thumbsContainer.querySelectorAll('.lightbox-thumb');
-        allThumbs.forEach((t, i) => {
+        // Update active thumbnail
+        const thumbs = thumbsContainer.querySelectorAll('.lightbox-thumb');
+        thumbs.forEach((t, i) => {
             t.classList.toggle('active', i === currentIndex);
         });
 
-        // Hide arrows if only 1 item
-        if (currentItems.length <= 1) {
-            prevBtn.classList.add('hidden');
-            nextBtn.classList.add('hidden');
-            thumbsContainer.style.display = 'none';
-        } else {
-            prevBtn.classList.remove('hidden');
-            nextBtn.classList.remove('hidden');
-            thumbsContainer.style.display = 'flex';
-        }
+        // Hide navigation if only single item
+        const isSingle = currentItems.length <= 1;
+        if (prevBtn) prevBtn.classList.toggle('hidden', isSingle);
+        if (nextBtn) nextBtn.classList.toggle('hidden', isSingle);
+        if (thumbsContainer) thumbsContainer.style.display = isSingle ? 'none' : 'flex';
     }
 
-    function openGallery(title, items, startIndex = 0) {
+    function openLightbox(title, items, startIndex = 0) {
+        previousActiveElement = document.activeElement;
         currentItems = items;
-        titleEl.textContent = title || 'Galeri Proyek';
-        
-        // Build thumbnails
+        if (titleEl) titleEl.textContent = title || 'Pratinjau Gambar';
+
+        // Build thumbnail strip
         thumbsContainer.innerHTML = '';
         if (items.length > 1) {
             items.forEach((item, i) => {
@@ -374,62 +497,108 @@ function initGalleryModal() {
 
         renderSlide(startIndex);
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        // Focus close button for accessibility
+        if (closeBtn) closeBtn.focus();
+
+        // Framer Motion pop-in
+        if (window.Motion && typeof window.Motion.animate === 'function' && !prefersReducedMotion) {
+            window.Motion.animate(imgEl, {
+                transform: ['scale(0.92)', 'scale(1)'],
+                opacity: [0, 1]
+            }, { duration: 0.35, easing: [0.16, 1, 0.3, 1] });
+        }
     }
 
-    function closeGallery() {
+    function closeLightbox() {
         modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         setTimeout(() => {
             imgEl.src = '';
             currentItems = [];
-        }, 300);
+        }, 250);
+
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+            previousActiveElement.focus();
+        }
     }
 
-    // Navigation events
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        renderSlide(currentIndex - 1);
-    });
+    // Controls
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderSlide(currentIndex - 1);
+        });
+    }
 
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        renderSlide(currentIndex + 1);
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderSlide(currentIndex + 1);
+        });
+    }
 
-    closeBtn.addEventListener('click', closeGallery);
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal || e.target.classList.contains('lightbox-stage') || e.target.classList.contains('lightbox-img-wrapper')) {
-            closeGallery();
+            closeLightbox();
         }
     });
 
+    // Keyboard navigation & Focus trapping
     document.addEventListener('keydown', (e) => {
         if (!modal.classList.contains('active')) return;
-        if (e.key === 'Escape') closeGallery();
-        if (e.key === 'ArrowLeft') renderSlide(currentIndex - 1);
-        if (e.key === 'ArrowRight') renderSlide(currentIndex + 1);
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            renderSlide(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            renderSlide(currentIndex + 1);
+        } else if (e.key === 'Tab') {
+            // Focus trap within modal
+            const focusables = modal.querySelectorAll('button:not(.hidden), a[href]');
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
     });
 
-    // Mobile touch swipe inside lightbox
+    // Touch swipe gestures
     let touchStartX = 0;
     modal.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
+
     modal.addEventListener('touchend', (e) => {
         const touchEndX = e.changedTouches[0].screenX;
-        if (touchStartX - touchEndX > 50) {
+        const diff = touchStartX - touchEndX;
+        if (diff > 50) {
             renderSlide(currentIndex + 1);
-        } else if (touchEndX - touchStartX > 50) {
+        } else if (diff < -50) {
             renderSlide(currentIndex - 1);
         }
     }, { passive: true });
 
-    // Attach trigger to all project gallery wrappers
+    // Attach trigger to all gallery wrappers
     document.querySelectorAll('.project-gallery-trigger').forEach(trigger => {
         trigger.addEventListener('click', (e) => {
             e.stopPropagation();
-            const title = trigger.dataset.galleryTitle || 'Detail Proyek';
+            const title = trigger.dataset.galleryTitle || 'Detail Gambar';
             const sourceElements = trigger.querySelectorAll('.gallery-sources [data-src]');
             let items = [];
 
@@ -451,20 +620,28 @@ function initGalleryModal() {
             }
 
             if (items.length) {
-                openGallery(title, items, 0);
+                openLightbox(title, items, 0);
             }
         });
     });
+}
 
-    // Also attach to About profile photo
-    const aboutPhoto = document.querySelector('.about-photo-img');
-    if (aboutPhoto) {
-        aboutPhoto.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openGallery('Foto Potret Profesional', [{
-                src: aboutPhoto.src,
-                caption: 'Nabiel Muhammad Imjauzanansyah — AI/ML Engineer & Software Developer'
-            }], 0);
+/* ============================================
+   10. BACK TO TOP BUTTON
+   ============================================ */
+function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        const isVisible = window.scrollY > 400;
+        btn.classList.toggle('visible', isVisible);
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
         });
-    }
+    });
 }
