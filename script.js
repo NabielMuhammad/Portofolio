@@ -241,7 +241,7 @@ function initProjectFilter() {
             const filter = btn.dataset.filter;
 
             cards.forEach(card => {
-                const matches = filter === 'all' || card.dataset.category === filter;
+                const matches = filter === 'all' || card.dataset.category.includes(filter);
                 card.classList.toggle('hidden', !matches);
                 if (matches) {
                     card.classList.add('reveal', 'active');

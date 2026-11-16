@@ -470,20 +470,24 @@ nabiel.build_future()</code></pre>
                     </div>
 
                     <!-- InvestMentor -->
-                    <div class="bento-card col-6 reveal delay-100 project-card" data-category="web"
+                    <div class="bento-card col-6 reveal delay-100 project-card" data-category="web ai"
                         style="flex-direction: column-reverse;">
                         <div class="glare"></div>
                         <div class="bento-card-content">
-                            <span class="text-meta">Full-Stack AI</span>
-                            <h3 class="bento-title">InvestMentor</h3>
+                            <span class="text-meta">Full-Stack AI · Predictive & Generative</span>
+                            <h3 class="bento-title">InvestMentor — Equity Analytics</h3>
                             <p class="bento-desc">
-                                <strong>Problem:</strong> Investor pemula kesulitan memahami analisis saham tanpa
-                                mentor.<br>
-                                <strong>Solution:</strong> Simulator trading & mentor AI berbasis Gemini 2.0 dengan
-                                prediksi saham via TensorFlow.js dan data real-time.<br>
-                                <strong>Impact:</strong> Fitur simulasi portofolio dan saran investasi interaktif
-                                berbasis AI.
+                                <strong>Problem:</strong> Investor pemula kesulitan menganalisis data deret waktu saham dan sering mengalami limitasi kuota API saat analisis real-time.<br>
+                                <strong>Solution:</strong> Platform analitik pasar modal dengan model LSTM (TensorFlow.js) untuk proyeksi harga saham harian, asisten Gemini 2.0 (3-Key pool auto-failover), dan streaming WebSocket.<br>
+                                <strong>Impact:</strong> Akurasi <strong>1.8% MAPE</strong> & <strong>64% Directional</strong> pada 700 hari data bursa, <strong>99.9% uptime</strong> tanpa error 429, serta in-memory cache 15 menit.
                             </p>
+                            <div class="tag-container" style="margin-bottom: var(--space-md);">
+                                <span class="tag">TensorFlow.js (LSTM)</span>
+                                <span class="tag">Gemini 2.0</span>
+                                <span class="tag">WebSocket</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MySQL</span>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/NabielMuhammad/investmentor" target="_blank" rel="noopener"
                                     class="project-link-btn">
@@ -542,6 +546,50 @@ nabiel.build_future()</code></pre>
                             </div>
                             <div class="gallery-sources" style="display: none;">
                                 <div data-src="Foto/botvoucher.jpg" data-caption="Antarmuka & Arsitektur Bot Telegram Distribusi Voucher BGA Telkomsel (1.000+ Transaksi/Jam)"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expense AI — Multimodal Personal Finance Assistant -->
+                    <div class="bento-card col-12 horizontal reveal delay-100 project-card" data-category="ai web">
+                        <div class="glare"></div>
+                        <div class="bento-card-content" style="flex: 1;">
+                            <span class="text-meta">Production-Grade · Multimodal AI · Full-Stack</span>
+                            <h3 class="bento-title" style="font-size: clamp(28px, 4vw, 36px);">Expense AI — Personal Finance</h3>
+                            <p class="bento-desc" style="margin-bottom: var(--space-md);">
+                                <strong>Problem:</strong> Pencatatan keuangan manual lambat dan melelahkan, sementara struk fisik belanja sering hilang atau memiliki format tanggal dan diskon yang beragam.<br>
+                                <strong>Solution:</strong> Asisten finansial otomatis terintegrasi Telegram Bot & Next.js 16 PWA (Supabase + Prisma). Menggunakan Gemini Vision Multimodal untuk ekstraksi struk instan, auto-normalisasi tanggal (DMY/ISO), dan komputasi presisi integer/BigInt IDR.<br>
+                                <strong>Impact:</strong> Ekstraksi struk <strong>&lt;3 detik</strong>, 5-layer webhook defense (HMAC + IP verify), dan <strong>22/22 unit tests passed (100%)</strong> tanpa distorsi desimal.
+                            </p>
+                            <div class="tag-container">
+                                <span class="tag">Gemini Vision AI</span>
+                                <span class="tag">Telegram Bot API</span>
+                                <span class="tag">Next.js 16</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Prisma ORM</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">Tailwind CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/NabielMuhammad" target="_blank" rel="noopener"
+                                    class="project-link-btn">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bento-image-wrapper project-gallery-trigger" style="flex: 1.2;" data-gallery-title="Expense AI — Smart Personal Finance Assistant">
+                            <img src="Foto/ExpenseAI/expense-bot-dashboard.png"
+                                alt="Dashboard & Bot Telegram Expense AI"
+                                class="main-project-img" loading="lazy">
+                            <div class="gallery-badge">
+                                <i class="fa-solid fa-images" aria-hidden="true"></i>
+                                <span>Galeri (3 Foto)</span>
+                                <i class="fa-solid fa-expand expand-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="gallery-sources" style="display: none;">
+                                <div data-src="Foto/ExpenseAI/expense-bot-dashboard.png" data-caption="Respons Telegram Bot & Analisis Pengeluaran Multimodal Instan"></div>
+                                <div data-src="Foto/ExpenseAI/expense-bot-chat.png" data-caption="Interaksi Chatbot Finansial Interaktif Berbasis AI Gemini"></div>
+                                <div data-src="Foto/ExpenseAI/receipt-sample.jpg" data-caption="Sampel Foto Struk Belanja yang Berhasil Diekstrak Otomatis via AI Vision"></div>
                             </div>
                         </div>
                     </div>
